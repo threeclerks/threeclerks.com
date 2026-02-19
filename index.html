@@ -22,26 +22,43 @@
 
     /* Header with background image and branding */
     header {
+      position: relative;
       text-align: center;
       padding: 80px 20px;
       background-color: #000;
       color: white;
+      overflow: hidden;
     }
+
+    /* Video Styling */
+    header video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -1; /* Make sure video stays behind text */
+    }
+
     header img {
       width: 500px;
       margin-bottom: 20px;
     }
+
     header h1 {
       font-size: 3em;
       margin: 0;
       font-family: 'Merriweather', serif;
     }
+
     header p {
       font-size: 1.2em;
       margin: 20px auto;
       width: 80%;
       max-width: 600px;
     }
+
     header a {
       background: #0066ff;
       color: white;
@@ -165,6 +182,10 @@
 
   <!-- Hero Section -->
   <header>
+    <video autoplay muted loop>
+      <source src="homepage-hero-animation.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
     <img src="Three-Clerks-Logo.png" alt="Three Clerks Logo">
     <h1>Transforming Complexities into Clear Solutions</h1>
     <p>Your trusted partner for legal, creative, and AI-driven services designed to optimize your business.</p>
