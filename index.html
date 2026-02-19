@@ -20,17 +20,15 @@
       color: #f1f1f1;
     }
 
-    /* Header with background image and branding */
+    /* Hero Section */
     header {
       position: relative;
-      text-align: center;
-      padding: 80px 20px;
-      background-color: #000;
-      color: white;
+      height: 100vh;
+      width: 100%;
       overflow: hidden;
     }
 
-    /* Video Styling */
+    /* Fullscreen Video */
     header video {
       position: absolute;
       top: 0;
@@ -38,41 +36,59 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      z-index: -1; /* Make sure video stays behind text */
+      z-index: -1;
     }
 
-    header img {
-      width: 500px;
-      margin-bottom: 20px;
+    /* Overlay for Video */
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.4); /* Dark overlay to improve text contrast */
+      z-index: 0;
+    }
+
+    /* Hero Content */
+    header .content {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      color: white;
+      z-index: 1;
     }
 
     header h1 {
       font-size: 3em;
-      margin: 0;
+      margin-bottom: 20px;
       font-family: 'Merriweather', serif;
+      text-transform: uppercase;
     }
 
     header p {
-      font-size: 1.2em;
-      margin: 20px auto;
-      width: 80%;
+      font-size: 1.5em;
       max-width: 600px;
+      margin: 0 auto 30px;
     }
 
     header a {
       background: #0066ff;
       color: white;
-      padding: 12px 24px;
+      padding: 15px 30px;
       text-decoration: none;
       font-size: 1.2em;
       border-radius: 6px;
       transition: background 0.3s;
     }
+
     header a:hover {
       background: #004d99;
     }
 
-    /* Container for main content */
+    /* Main Content */
     .container {
       max-width: 900px;
       margin: 30px auto;
@@ -82,72 +98,58 @@
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
     }
 
-    /* Section headings */
     h2 {
       font-size: 2.5em;
       margin-bottom: 20px;
       color: #0066ff;
     }
 
-    /* Services grid */
     .services {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 20px;
     }
+
     .services div {
       padding: 20px;
       background: #2a2a2a;
       border-radius: 8px;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     }
+
     .services h3 {
       color: #0066ff;
       font-size: 1.6em;
     }
+
     .services p {
       color: #bbb;
     }
 
-    /* Call to action */
-    .cta {
-      text-align: center;
-      margin-top: 40px;
-    }
-    .cta a {
-      background: #0066ff;
-      padding: 15px 30px;
-      font-size: 1.2em;
-      color: white;
-      text-decoration: none;
-      border-radius: 6px;
-      transition: background 0.3s;
-    }
-    .cta a:hover {
-      background: #004d99;
-    }
-
-    /* Footer styling */
+    /* Footer */
     footer {
       text-align: center;
       margin-top: 50px;
       font-size: 0.9em;
       color: #888;
     }
+
     footer a {
       color: #0066ff;
       text-decoration: none;
     }
+
     footer a:hover {
       text-decoration: underline;
     }
 
-    /* Contact form section */
+    /* Subscription Form */
     .contact-form {
       display: flex;
       justify-content: center;
       margin-top: 40px;
     }
+
     .contact-form input {
       padding: 12px;
       border-radius: 6px;
@@ -156,6 +158,7 @@
       width: 300px;
       margin-right: 10px;
     }
+
     .contact-form button {
       padding: 12px 20px;
       background: #0066ff;
@@ -166,6 +169,7 @@
       cursor: pointer;
       transition: background 0.3s;
     }
+
     .contact-form button:hover {
       background: #004d99;
     }
@@ -182,25 +186,29 @@
 
   <!-- Hero Section -->
   <header>
-    <!-- Background Video -->
+    <!-- Fullscreen Video -->
     <video autoplay muted loop>
       <source src="homepage-hero-animation.mp4" type="video/mp4">
       Your browser does not support the video tag.
     </video>
-    <img src="Three-Clerks-Logo.png" alt="Three Clerks Logo">
-    <h1>Transforming Complexities into Clear Solutions</h1>
-    <p>Your trusted partner for legal, creative, and AI-driven services designed to optimize your business.</p>
-    <a href="#services">Explore Our Services</a>
+    <!-- Overlay for better text contrast -->
+    <div class="overlay"></div>
+    <!-- Hero Content -->
+    <div class="content">
+      <h1>Transforming Complexities into Clear Solutions</h1>
+      <p>Your trusted partner for legal, creative, and AI-driven services designed to optimize your business.</p>
+      <a href="#services">Explore Our Services</a>
+    </div>
   </header>
 
   <!-- Main Content Container -->
   <div class="container">
     <h2 id="services">Our Services</h2>
 
-    <!-- Legal Services Section -->
+    <!-- Services Section -->
     <div class="services">
       <div>
-        <img src="Three-Clerks-Ad-Man-with-Tie.png" alt="Legal Services Image" style="width:100%; max-width: 300px; margin-bottom: 20px;">
+        <img src="Three-Clerks-Ad-Man-with-Tie.png" alt="Legal Services" style="width:100%; max-width: 300px; margin-bottom: 20px;">
         <h3>Legal Services</h3>
         <p>We provide expert legal research, drafting pleadings, motions, discovery, and trial support for attorneys and businesses.</p>
         <ul>
@@ -211,9 +219,8 @@
         </ul>
       </div>
 
-      <!-- Writing Services Section -->
       <div>
-        <img src="Old-Typewriter.jpg" alt="Writing Services Image" style="width:100%; max-width: 300px; margin-bottom: 20px;">
+        <img src="Old-Typewriter.jpg" alt="Writing Services" style="width:100%; max-width: 300px; margin-bottom: 20px;">
         <h3>Writing Services</h3>
         <p>We create clear, engaging content tailored to your needs—whether it’s copywriting, blog posts, web content, or reports.</p>
         <ul>
@@ -225,10 +232,9 @@
       </div>
     </div>
 
-    <!-- Creative Solutions Section -->
     <div class="services">
       <div>
-        <img src="Video Editing.jpg" alt="Creative Solutions Image" style="width:100%; max-width: 300px; margin-bottom: 20px;">
+        <img src="Video Editing.jpg" alt="Creative Solutions" style="width:100%; max-width: 300px; margin-bottom: 20px;">
         <h3>Creative Solutions</h3>
         <p>We create dynamic PowerPoint presentations, videos, and visual content that help your brand or stories stand out and engage your audience.</p>
         <ul>
@@ -239,9 +245,8 @@
         </ul>
       </div>
 
-      <!-- AI Solutions & Consulting Section -->
       <div>
-        <img src="AI Robot.jpg" alt="AI Solutions Image" style="width:100%; max-width: 300px; margin-bottom: 20px;">
+        <img src="AI Robot.jpg" alt="AI Solutions" style="width:100%; max-width: 300px; margin-bottom: 20px;">
         <h3>AI Solutions & Consulting</h3>
         <p>Unlock the power of AI with custom agents, chatbots, and automation solutions that optimize operations and enhance customer engagement.</p>
         <ul>
