@@ -20,12 +20,15 @@
       color: #f1f1f1;
     }
 
-    /* Hero Section */
+    /* Hero Section with reduced size */
     header {
       position: relative;
-      height: 100vh;
+      height: 400px; /* Adjusted height */
       width: 100%;
       overflow: hidden;
+      text-align: center;
+      color: white;
+      padding: 40px 20px;
     }
 
     /* Fullscreen Video */
@@ -46,38 +49,38 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: rgba(0, 0, 0, 0.4); /* Dark overlay to improve text contrast */
+      background: rgba(0, 0, 0, 0.4); /* Dark overlay */
       z-index: 0;
     }
 
     /* Hero Content */
     header .content {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      text-align: center;
-      color: white;
+      position: relative;
       z-index: 1;
     }
 
-    header h1 {
-      font-size: 3em;
+    header img {
+      width: 200px; /* Reduced size of the logo */
       margin-bottom: 20px;
+    }
+
+    header h1 {
+      font-size: 2.5em;
+      margin: 0;
       font-family: 'Merriweather', serif;
       text-transform: uppercase;
     }
 
     header p {
-      font-size: 1.5em;
+      font-size: 1.2em;
       max-width: 600px;
-      margin: 0 auto 30px;
+      margin: 10px auto;
     }
 
     header a {
       background: #0066ff;
       color: white;
-      padding: 15px 30px;
+      padding: 12px 24px;
       text-decoration: none;
       font-size: 1.2em;
       border-radius: 6px;
@@ -195,6 +198,7 @@
     <div class="overlay"></div>
     <!-- Hero Content -->
     <div class="content">
+      <img src="Three-Clerks-Logo.png" alt="Three Clerks Logo">
       <h1>Transforming Complexities into Clear Solutions</h1>
       <p>Your trusted partner for legal, creative, and AI-driven services designed to optimize your business.</p>
       <a href="#services">Explore Our Services</a>
