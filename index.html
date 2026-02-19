@@ -23,12 +23,11 @@
     /* Hero Section with reduced size */
     header {
       position: relative;
-      height: 400px; /* Adjusted height */
+      height: 350px; /* Adjusted height for a more balanced layout */
       width: 100%;
       overflow: hidden;
       text-align: center;
       color: white;
-      padding: 40px 20px;
     }
 
     /* Fullscreen Video */
@@ -42,7 +41,7 @@
       z-index: -1;
     }
 
-    /* Overlay for Video */
+    /* Overlay for better text contrast */
     .overlay {
       position: absolute;
       top: 0;
@@ -57,16 +56,17 @@
     header .content {
       position: relative;
       z-index: 1;
+      padding: 20px;
     }
 
     header img {
-      width: 200px; /* Reduced size of the logo */
+      width: 250px; /* Larger logo size */
       margin-bottom: 20px;
     }
 
     header h1 {
       font-size: 2.5em;
-      margin: 0;
+      margin: 10px 0;
       font-family: 'Merriweather', serif;
       text-transform: uppercase;
     }
@@ -75,6 +75,7 @@
       font-size: 1.2em;
       max-width: 600px;
       margin: 10px auto;
+      line-height: 1.5;
     }
 
     header a {
