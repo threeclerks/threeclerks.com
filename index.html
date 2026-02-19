@@ -3,6 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Three Clerks offers professional legal, writing, and creative services, including AI solutions, to businesses and individuals. Get a free consultation today.">
+  <meta name="keywords" content="legal services, writing services, AI consulting, creative solutions, business consulting, legal research, chatbots, video editing">
+  <meta name="author" content="Three Clerks">
   <title>Three Clerks | Professional Legal, Writing & Creative Services</title>
 
   <!-- Google Fonts for better typography -->
@@ -13,8 +16,8 @@
       font-family: 'Montserrat', sans-serif;
       margin: 0;
       padding: 0;
-      background: #f4f4f9;
-      color: #333;
+      background: #121212;
+      color: #f1f1f1;
     }
 
     /* Header with background image and branding */
@@ -26,7 +29,7 @@
       color: white;
     }
     header img {
-      width: 500px; /* Double the size of the previous 250px */
+      width: 500px;
       margin-bottom: 20px;
     }
     header h1 {
@@ -57,15 +60,15 @@
     .container {
       max-width: 900px;
       margin: 30px auto;
-      background: white;
+      background: #1d1d1d;
       padding: 40px;
       border-radius: 12px;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
     }
 
     /* Section headings */
     h2 {
-      font-size: 2em;
+      font-size: 2.5em;
       margin-bottom: 20px;
       color: #0066ff;
     }
@@ -78,13 +81,16 @@
     }
     .services div {
       padding: 20px;
-      background: #f1f1f1;
+      background: #2a2a2a;
       border-radius: 8px;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     }
     .services h3 {
-      color: #0066ff; /* Restored the original color */
-      font-size: 1.5em;
+      color: #0066ff;
+      font-size: 1.6em;
+    }
+    .services p {
+      color: #bbb;
     }
 
     /* Call to action */
@@ -120,6 +126,34 @@
       text-decoration: underline;
     }
 
+    /* Contact form section */
+    .contact-form {
+      display: flex;
+      justify-content: center;
+      margin-top: 40px;
+    }
+    .contact-form input {
+      padding: 12px;
+      border-radius: 6px;
+      border: none;
+      font-size: 1em;
+      width: 300px;
+      margin-right: 10px;
+    }
+    .contact-form button {
+      padding: 12px 20px;
+      background: #0066ff;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 1em;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    .contact-form button:hover {
+      background: #004d99;
+    }
+
     /* Responsive layout */
     @media (max-width: 768px) {
       .services {
@@ -133,8 +167,8 @@
   <!-- Hero Section -->
   <header>
     <img src="Three-Clerks-Logo.png" alt="Three Clerks Logo">
-    <h1>Legal. Creative. Strategic.</h1>
-    <p>Turning legal complexities, creative visions, and business needs into clear solutions.</p>
+    <h1>Transforming Complexities into Clear Solutions</h1>
+    <p>Your trusted partner for legal, creative, and AI-driven services designed to optimize your business.</p>
     <a href="#services">Explore Our Services</a>
   </header>
 
@@ -147,14 +181,26 @@
       <div>
         <img src="Three-Clerks-Ad-Man-with-Tie.png" alt="Legal Services Image" style="width:100%; max-width: 300px; margin-bottom: 20px;">
         <h3>Legal Services</h3>
-        <p>Providing expert legal research, drafting pleadings, motions, discovery, and trial support specifically for attorneys and businesses. We assist attorneys in streamlining legal processes and improving productivity.</p>
+        <p>We provide expert legal research, drafting pleadings, motions, discovery, and trial support for attorneys and businesses.</p>
+        <ul>
+          <li>Legal research and analysis</li>
+          <li>Drafting pleadings, motions, and discovery</li>
+          <li>Trial preparation and support</li>
+          <li>Business and corporate legal assistance</li>
+        </ul>
       </div>
 
       <!-- Writing Services Section -->
       <div>
         <img src="Old-Typewriter.jpg" alt="Writing Services Image" style="width:100%; max-width: 300px; margin-bottom: 20px;">
         <h3>Writing Services</h3>
-        <p>We create clear, engaging content tailored to your needs—whether it’s copywriting, blog posts, web content, or reports. Our writing helps businesses communicate effectively, build their brand, and connect with their audience.</p>
+        <p>We create clear, engaging content tailored to your needs—whether it’s copywriting, blog posts, web content, or reports.</p>
+        <ul>
+          <li>Copywriting and blog posts</li>
+          <li>Web content and SEO writing</li>
+          <li>Reports and business documents</li>
+          <li>Brand building through written content</li>
+        </ul>
       </div>
     </div>
 
@@ -164,6 +210,12 @@
         <img src="Video Editing.jpg" alt="Creative Solutions Image" style="width:100%; max-width: 300px; margin-bottom: 20px;">
         <h3>Creative Solutions</h3>
         <p>We create dynamic PowerPoint presentations, videos, and visual content that help your brand or stories stand out and engage your audience.</p>
+        <ul>
+          <li>PowerPoint presentations</li>
+          <li>Video creation and editing</li>
+          <li>Social media content creation</li>
+          <li>Brand storytelling through visuals</li>
+        </ul>
       </div>
 
       <!-- AI Solutions & Consulting Section -->
@@ -171,7 +223,19 @@
         <img src="AI Robot.jpg" alt="AI Solutions Image" style="width:100%; max-width: 300px; margin-bottom: 20px;">
         <h3>AI Solutions & Consulting</h3>
         <p>Unlock the power of AI with custom agents, chatbots, and automation solutions that optimize operations and enhance customer engagement.</p>
+        <ul>
+          <li>Custom AI agents</li>
+          <li>AI-powered chatbots</li>
+          <li>Business automation solutions</li>
+          <li>Predictive analytics and insights</li>
+        </ul>
       </div>
+    </div>
+
+    <!-- Contact Form -->
+    <div class="contact-form">
+      <input type="email" placeholder="Your email address" />
+      <button>Get My Free Consultation</button>
     </div>
 
     <!-- Call to Action -->
@@ -182,6 +246,7 @@
     <!-- Footer Section -->
     <footer>
       <p>© 2026 Three Clerks, Inc. | <a href="mailto:threeclerks@proton.me">Email Us</a></p>
+      <p><a href="#services">Back to Services</a> | <a href="#">Privacy Policy</a></p>
     </footer>
   </div>
 
