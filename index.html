@@ -3,19 +3,26 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Three Clerks</title>
+  <title>Three Clerks | Professional Legal, Writing & Creative Services</title>
+
+  <!-- Google Fonts for better typography -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Merriweather&display=swap" rel="stylesheet">
+  
   <style>
     body {
-      font-family: 'Arial', sans-serif;
+      font-family: 'Montserrat', sans-serif;
       margin: 0;
       padding: 0;
       background: #f4f4f9;
       color: #333;
     }
+
+    /* Header with background image and branding */
     header {
       text-align: center;
-      padding: 30px 0;
-      background: #0066ff;
+      padding: 80px 20px;
+      background: linear-gradient(90deg, rgba(0,102,255,0.8), rgba(0,153,255,0.8)), url('your-image.jpg');
+      background-size: cover;
       color: white;
     }
     header img {
@@ -23,27 +30,47 @@
       margin-bottom: 20px;
     }
     header h1 {
-      font-size: 2.5em;
+      font-size: 3em;
       margin: 0;
+      font-family: 'Merriweather', serif;
     }
+    header p {
+      font-size: 1.2em;
+      margin: 20px auto;
+      width: 80%;
+      max-width: 600px;
+    }
+    header a {
+      background: #0066ff;
+      color: white;
+      padding: 12px 24px;
+      text-decoration: none;
+      font-size: 1.2em;
+      border-radius: 6px;
+      transition: background 0.3s;
+    }
+    header a:hover {
+      background: #004d99;
+    }
+
+    /* Container for main content */
     .container {
-      max-width: 800px;
+      max-width: 900px;
       margin: 30px auto;
       background: white;
       padding: 40px;
       border-radius: 12px;
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     }
+
+    /* Section headings */
     h2 {
-      font-size: 1.8em;
-      margin-bottom: 15px;
+      font-size: 2em;
+      margin-bottom: 20px;
       color: #0066ff;
     }
-    p {
-      font-size: 1.1em;
-      color: #555;
-      line-height: 1.6;
-    }
+
+    /* Services grid */
     .services {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -56,18 +83,20 @@
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     }
     .services h3 {
-      margin-top: 0;
       color: #0066ff;
+      font-size: 1.5em;
     }
+
+    /* Call to action */
     .cta {
       text-align: center;
       margin-top: 40px;
     }
     .cta a {
       background: #0066ff;
-      color: white;
       padding: 15px 30px;
       font-size: 1.2em;
+      color: white;
       text-decoration: none;
       border-radius: 6px;
       transition: background 0.3s;
@@ -75,6 +104,8 @@
     .cta a:hover {
       background: #004d99;
     }
+
+    /* Footer styling */
     footer {
       text-align: center;
       margin-top: 50px;
@@ -88,6 +119,26 @@
     footer a:hover {
       text-decoration: underline;
     }
+
+    /* Testimonial section */
+    #testimonials {
+      background: #f9f9f9;
+      padding: 30px 20px;
+      border-radius: 8px;
+      margin-top: 40px;
+    }
+    #testimonials blockquote {
+      font-style: italic;
+      font-size: 1.1em;
+      color: #555;
+      margin-bottom: 10px;
+    }
+    #testimonials footer {
+      font-size: 0.9em;
+      color: #333;
+    }
+
+    /* Responsive layout */
     @media (max-width: 768px) {
       .services {
         grid-template-columns: 1fr;
@@ -96,40 +147,56 @@
   </style>
 </head>
 <body>
+
+  <!-- Hero Section -->
   <header>
     <img src="Three-Clerks-Logo.png" alt="Three Clerks Logo">
     <h1>Three Clerks</h1>
-    <p>Providing professional services in legal support, writing, and creative solutions.</p>
+    <p>Your trusted partner for legal, writing, and creative services tailored to your needs.</p>
+    <a href="#services">Explore Our Services</a>
   </header>
 
+  <!-- Main Content Container -->
   <div class="container">
-    <h2>Our Services</h2>
+    <h2 id="services">Our Services</h2>
     <div class="services">
       <div>
         <h3>Legal Services</h3>
-        <p>Offering legal assistance and document preparation for individuals and businesses. We specialize in non-attorney legal support that helps you navigate legal procedures with ease.</p>
+        <p>Expert legal support for individuals and businesses. From document preparation to procedural guidance, we simplify complex legal tasks without the high costs of hiring an attorney.</p>
       </div>
       <div>
         <h3>Writing Services</h3>
-        <p>Need compelling content? Whether it's articles, blogs, or reports, our writing services cater to your business or personal needs with high-quality, professional writing.</p>
+        <p>High-quality content creation for blogs, articles, reports, and more. Whether you need creative writing or professional documentation, we craft compelling pieces to engage your audience.</p>
       </div>
       <div>
         <h3>Creative Solutions</h3>
-        <p>From branding to copywriting and more, we provide innovative and creative solutions to help you communicate effectively with your audience.</p>
+        <p>Innovative branding, copywriting, and design services to help you stand out. Let us bring your ideas to life with creativity and strategic thinking that resonates with your audience.</p>
       </div>
       <div>
         <h3>Consulting & Strategy</h3>
-        <p>We offer consulting services to help you develop strategies for your legal or creative projects, ensuring you're on the right track to success.</p>
+        <p>Customized consulting services to refine your business strategies. Whether it’s legal advice, content creation, or business development, we provide actionable insights that help you grow.</p>
       </div>
     </div>
 
+    <!-- Call to Action -->
     <div class="cta">
       <a href="mailto:threeclerks@proton.me">Contact Us Now</a>
     </div>
 
+    <!-- Testimonials Section -->
+    <div id="testimonials">
+      <h2>What Our Clients Say</h2>
+      <blockquote>
+        "Three Clerks made navigating my legal processes seamless and stress-free. Their writing services were also exceptional — clear, concise, and on point!"
+      </blockquote>
+      <footer>- Jane Doe, Small Business Owner</footer>
+    </div>
+
+    <!-- Footer Section -->
     <footer>
       <p>© 2026 Three Clerks, Inc. | <a href="mailto:threeclerks@proton.me">Email Us</a></p>
     </footer>
   </div>
+
 </body>
 </html>
