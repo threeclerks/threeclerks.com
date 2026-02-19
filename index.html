@@ -79,4 +79,107 @@
     .services div {
       padding: 20px;
       background: #f1f1f1;
-      border-radius:
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    .services h3 {
+      color: #0066ff;
+      font-size: 1.5em;
+    }
+
+    /* Call to action */
+    .cta {
+      text-align: center;
+      margin-top: 40px;
+    }
+    .cta a {
+      background: #0066ff;
+      padding: 15px 30px;
+      font-size: 1.2em;
+      color: white;
+      text-decoration: none;
+      border-radius: 6px;
+      transition: background 0.3s;
+    }
+    .cta a:hover {
+      background: #004d99;
+    }
+
+    /* Footer styling */
+    footer {
+      text-align: center;
+      margin-top: 50px;
+      font-size: 0.9em;
+      color: #888;
+    }
+    footer a {
+      color: #0066ff;
+      text-decoration: none;
+    }
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    /* Responsive layout */
+    @media (max-width: 768px) {
+      .services {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Hero Section -->
+  <header>
+    <img src="Three-Clerks-Logo.png" alt="Three Clerks Logo">
+    <h1>Legal. Creative. Strategic.</h1>
+    <p>Turning legal complexities, creative visions, and business needs into clear solutions.</p>
+    <a href="#services">Explore Our Services</a>
+  </header>
+
+  <!-- Main Content Container -->
+  <div class="container">
+    <h2 id="services">Our Services</h2>
+
+    <!-- Legal Services Section -->
+    <div>
+      <img src="Three-Clerks-Ad-Man-with-Tie.png" alt="Legal Services Image" style="width:100%; max-width: 300px; margin-bottom: 20px;">
+      <h3>Legal Services</h3>
+      <p>Providing expert legal research, drafting pleadings, motions, discovery, and trial support specifically for attorneys and businesses. We assist attorneys in streamlining legal processes and improving productivity.</p>
+    </div>
+
+    <!-- Writing Services Section -->
+    <div>
+      <img src="Old-Typewriter.jpg" alt="Writing Services Image" style="width:100%; max-width: 300px; margin-bottom: 20px;">
+      <h3>Writing Services</h3>
+      <p>We create clear, engaging content tailored to your needs—whether it’s copywriting, blog posts, web content, or reports. Our writing helps businesses communicate effectively, build their brand, and connect with their audience.</p>
+    </div>
+
+    <!-- Creative Solutions Section -->
+    <div>
+      <img src="Video Editing.jpg" alt="Creative Solutions Image" style="width:100%; max-width: 300px; margin-bottom: 20px;">
+      <h3>Creative Solutions</h3>
+      <p>We create dynamic PowerPoint presentations, videos, and visual content that help your brand or stories stand out and engage your audience.</p>
+    </div>
+
+    <!-- AI Solutions & Consulting Section -->
+    <div>
+      <img src="AI Robot.jpg" alt="AI Solutions Image" style="width:100%; max-width: 300px; margin-bottom: 20px;">
+      <h3>AI Solutions & Consulting</h3>
+      <p>Unlock the power of AI with custom agents, chatbots, and automation solutions that optimize operations and enhance customer engagement.</p>
+    </div>
+
+    <!-- Call to Action -->
+    <div class="cta">
+      <a href="mailto:threeclerks@proton.me">Contact Us Now</a>
+    </div>
+
+    <!-- Footer Section -->
+    <footer>
+      <p>© 2026 Three Clerks, Inc. | <a href="mailto:threeclerks@proton.me">Email Us</a></p>
+    </footer>
+  </div>
+
+</body>
+</html>
