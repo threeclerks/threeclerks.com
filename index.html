@@ -47,33 +47,27 @@
       width: 200px; /* Adjust logo size */
     }
 
-    /* Hero Text Section below Video */
-    .hero-content {
-      position: absolute;
-      top: 80%; /* Move text below video */
-      left: 50%;
-      transform: translateX(-50%);
+    /* Hero Text Section */
+    .hero-text {
+      background-color: #121212;
+      padding: 40px;
       text-align: center;
-      z-index: 1;
-      width: 90%;
-      max-width: 800px;
-      padding: 20px;
       color: white;
-      font-family: 'Merriweather', serif;
     }
 
-    .hero-content h1 {
+    .hero-text h1 {
       font-size: 2.5em;
       margin: 0;
       text-transform: uppercase;
+      font-family: 'Merriweather', serif;
     }
 
-    .hero-content p {
+    .hero-text p {
       font-size: 1.2em;
       margin: 20px 0;
     }
 
-    .hero-content a {
+    .hero-text a {
       background: #0066ff;
       color: white;
       padding: 12px 24px;
@@ -83,7 +77,7 @@
       transition: background 0.3s;
     }
 
-    .hero-content a:hover {
+    .hero-text a:hover {
       background: #004d99;
     }
 
@@ -193,14 +187,14 @@
     
     <!-- Logo -->
     <img src="Three-Clerks-Logo.png" alt="Three Clerks Logo" class="logo">
-
-    <!-- Hero Text Section below Video -->
-    <div class="hero-content">
-      <h1>Transforming Complexities into Clear Solutions</h1>
-      <p>Your trusted partner for legal, creative, and AI-driven services designed to optimize your business.</p>
-      <a href="#services">Explore Our Services</a>
-    </div>
   </header>
+
+  <!-- Hero Text Section Below the Video -->
+  <div class="hero-text">
+    <h1>Transforming Complexities into Clear Solutions</h1>
+    <p>Your trusted partner for legal, creative, and AI-driven services designed to optimize your business.</p>
+    <a href="#services">Explore Our Services</a>
+  </div>
 
   <!-- Main Content Container -->
   <div class="container">
