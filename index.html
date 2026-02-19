@@ -2,55 +2,133 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <img src="Three-Clerks-Logo.png" alt="Your Logo" style="width:150px; height:auto;">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Three Clerks</title>
   <style>
     body {
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-      background: #f7f7f7;
+      font-family: 'Arial', sans-serif;
       margin: 0;
       padding: 0;
+      background: #f4f4f9;
+      color: #333;
+    }
+    header {
+      text-align: center;
+      padding: 30px 0;
+      background: #0066ff;
+      color: white;
+    }
+    header img {
+      width: 150px;
+      margin-bottom: 20px;
+    }
+    header h1 {
+      font-size: 2.5em;
+      margin: 0;
     }
     .container {
-      max-width: 720px;
-      margin: 80px auto;
+      max-width: 800px;
+      margin: 30px auto;
       background: white;
       padding: 40px;
       border-radius: 12px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-      text-align: center;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     }
-    h1 {
-      margin-bottom: 10px;
+    h2 {
+      font-size: 1.8em;
+      margin-bottom: 15px;
+      color: #0066ff;
     }
     p {
+      font-size: 1.1em;
       color: #555;
       line-height: 1.6;
     }
-    a {
+    .services {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+    .services div {
+      padding: 20px;
+      background: #f1f1f1;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    .services h3 {
+      margin-top: 0;
       color: #0066ff;
+    }
+    .cta {
+      text-align: center;
+      margin-top: 40px;
+    }
+    .cta a {
+      background: #0066ff;
+      color: white;
+      padding: 15px 30px;
+      font-size: 1.2em;
       text-decoration: none;
-      margin: 0 10px;
+      border-radius: 6px;
+      transition: background 0.3s;
+    }
+    .cta a:hover {
+      background: #004d99;
     }
     footer {
-      margin-top: 30px;
+      text-align: center;
+      margin-top: 50px;
       font-size: 0.9em;
       color: #888;
+    }
+    footer a {
+      color: #0066ff;
+      text-decoration: none;
+    }
+    footer a:hover {
+      text-decoration: underline;
+    }
+    @media (max-width: 768px) {
+      .services {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
 <body>
-  <div class="container">
+  <header>
+    <img src="Three-Clerks-Logo.png" alt="Three Clerks Logo">
     <h1>Three Clerks</h1>
-    <p>
-    </p>
+    <p>Providing professional services in legal support, writing, and creative solutions.</p>
+  </header>
 
-    <p>
-      <a href="mailto:threeclerks@proton.me">Email</a>
-    </p>
+  <div class="container">
+    <h2>Our Services</h2>
+    <div class="services">
+      <div>
+        <h3>Legal Services</h3>
+        <p>Offering legal assistance and document preparation for individuals and businesses. We specialize in non-attorney legal support that helps you navigate legal procedures with ease.</p>
+      </div>
+      <div>
+        <h3>Writing Services</h3>
+        <p>Need compelling content? Whether it's articles, blogs, or reports, our writing services cater to your business or personal needs with high-quality, professional writing.</p>
+      </div>
+      <div>
+        <h3>Creative Solutions</h3>
+        <p>From branding to copywriting and more, we provide innovative and creative solutions to help you communicate effectively with your audience.</p>
+      </div>
+      <div>
+        <h3>Consulting & Strategy</h3>
+        <p>We offer consulting services to help you develop strategies for your legal or creative projects, ensuring you're on the right track to success.</p>
+      </div>
+    </div>
+
+    <div class="cta">
+      <a href="mailto:threeclerks@proton.me">Contact Us Now</a>
+    </div>
 
     <footer>
-      © 2026 Three Clerks, Inc.
+      <p>© 2026 Three Clerks, Inc. | <a href="mailto:threeclerks@proton.me">Email Us</a></p>
     </footer>
   </div>
 </body>
