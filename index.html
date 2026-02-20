@@ -239,17 +239,24 @@
       </div>
     </div>
 
-    <!-- Contact Us Section -->
-    <h2 id="contact" style="margin-top:60px;">Contact Us</h2>
-    <p>If you have a specific legal challenge or need expert assistance, tell us about it, and we’ll get back to you promptly.</p>
+   <!-- Contact Us Section -->
+<h2 id="contact" style="margin-top:60px;">Contact Us</h2>
+<p>If you have a specific legal challenge or need expert assistance, tell us about it, and we’ll get back to you promptly.</p>
 
-    <form style="max-width:700px; margin-top:30px;">
-      <input type="text" placeholder="Your name">
-      <input type="email" placeholder="Your email address">
-      <textarea placeholder="Briefly describe your legal needs or challenges" rows="5"></textarea>
-      <button type="submit">Submit Inquiry</button>
-    </form>
-
+<form action="/submit-form" method="POST" style="max-width:700px; margin-top:30px;">
+  <div style="margin-bottom: 12px;">
+    <input type="text" placeholder="Your name" name="name" required style="width:100%; padding:12px; margin-bottom:12px; border-radius:6px; border:none;">
+  </div>
+  <div style="margin-bottom: 12px;">
+    <input type="email" placeholder="Your email address" name="email" required style="width:100%; padding:12px; margin-bottom:12px; border-radius:6px; border:none;">
+  </div>
+  <div style="margin-bottom: 12px;">
+    <textarea placeholder="Briefly describe your legal needs or challenges" rows="5" name="message" required style="width:100%; padding:12px; margin-bottom:12px; border-radius:6px; border:none;"></textarea>
+  </div>
+  <button type="submit" style="background:#0066ff; color:white; padding:12px 24px; border:none; border-radius:6px; font-size:1em; cursor:pointer; width:100%; transition:background 0.3s;">
+    Submit Inquiry
+  </button>
+</form>
     <!-- Newsletter Subscription Form -->
     <div class="contact-form">
       <input type="email" placeholder="Your email address" />
