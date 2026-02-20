@@ -14,6 +14,8 @@
   <!-- Favicon -->
   <link rel="icon" href="icons8-cloud-link-windows-11-color-32.png" type="image/png">
 
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> <!-- Add jQuery -->
+
   <style>
     body {
       font-family: 'Montserrat', sans-serif;
@@ -174,6 +176,19 @@
         grid-template-columns: 1fr;
       }
     }
+
+    /* Success & Error Messages */
+    .success-message {
+      display: none;
+      color: green;
+      font-weight: bold;
+    }
+    .error-message {
+      display: none;
+      color: red;
+      font-weight: bold;
+    }
+
   </style>
 </head>
 <body>
@@ -264,7 +279,7 @@
       If you have a specific challenge or project in mind, tell us a bit about it. We review inquiries carefully and respond promptly.
     </p>
 
-  <form action="https://formspree.io/f/mnjbbkgz" method="POST">
+  <form id="contact-form" action="https://formspree.io/f/mnjbbkgz" method="POST">
   <input type="text" name="name" placeholder="Your name" style="width:100%; padding:12px; margin-bottom:12px; border-radius:6px; border:none;" required>
   <input type="email" name="email" placeholder="Your email address" style="width:100%; padding:12px; margin-bottom:12px; border-radius:6px; border:none;" required>
   <textarea name="message" placeholder="Briefly describe your needs or challenges" rows="5" style="width:100%; padding:12px; margin-bottom:12px; border-radius:6px; border:none;" required></textarea>
@@ -273,6 +288,16 @@
   </button>
 </form>
 
+    <!-- Success Message -->
+    <div class="success-message" id="success-message">
+      <p>Thank you for reaching out! Your message has been sent successfully.</p>
+    </div>
+
+    <!-- Error Message -->
+    <div class="error-message" id="error-message">
+      <p>Oops! Something went wrong. Please try again.</p>
+    </div>
+
     <!-- Footer -->
     <footer>
       <p>© 2026 Three Clerks, Inc. | <a href="mailto:threeclerks@proton.me">Email Us</a></p>
@@ -280,5 +305,40 @@
     </footer>
 
   </div>
+
+  <script>
+    $(document).ready(function(){
+      // Prevent form submission to Formspree by default
+      $("#contact-form").submit(function(e){
+        e.preventDefault();
+
+        // Hide previous messages
+        $('#error-message').hide();
+        $('#success-message').hide();
+
+        // Serialize the form data
+        var formData = $(this).serialize();
+
+        // Submit form using AJAX
+        $.ajax({
+          url: $(this).attr('action'),
+          method: 'POST',
+          data: formData,
+          dataType: 'json',
+          success: function(response) {
+            // Show success message
+            $('#success-message').show();
+            // Reset the form
+            $('#contact-form')[0].reset();
+          },
+          error: function() {
+            // Show error message
+            $('#error-message').show();
+          }
+        });
+      });
+    });
+  </script>
+
 </body>
 </html>
