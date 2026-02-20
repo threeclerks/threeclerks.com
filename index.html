@@ -23,7 +23,7 @@
     /* Hero Section with reduced size */
     header {
       position: relative;
-      height: 300px; /* Reduced height for hero section */
+      height: 300px;
       width: 100%;
       overflow: hidden;
     }
@@ -44,7 +44,7 @@
       position: absolute;
       top: 20px;
       left: 20px;
-      width: 200px; /* Adjust logo size */
+      width: 200px;
     }
 
     /* Hero Text Section */
@@ -97,26 +97,45 @@
       color: #0066ff;
     }
 
+    /* Services Section */
     .services {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+      margin-top: 40px;
     }
 
     .services div {
-      padding: 20px;
       background: #2a2a2a;
+      padding: 30px;
       border-radius: 8px;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s;
+    }
+
+    .services div:hover {
+      transform: translateY(-10px);
     }
 
     .services h3 {
       color: #0066ff;
-      font-size: 1.6em;
+      font-size: 1.8em;
+      margin-bottom: 10px;
     }
 
     .services p {
       color: #bbb;
+      margin-bottom: 10px;
+    }
+
+    .services ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    .services ul li {
+      color: #bbb;
+      margin: 5px 0;
     }
 
     /* Footer */
@@ -136,29 +155,29 @@
       text-decoration: underline;
     }
 
-    /* Subscription Form */
+    /* Contact Form */
     .contact-form {
       display: flex;
       justify-content: center;
       margin-top: 40px;
     }
 
-    .contact-form input {
+    .contact-form input,
+    .contact-form button {
       padding: 12px;
       border-radius: 6px;
-      border: none;
       font-size: 1em;
+    }
+
+    .contact-form input {
       width: 300px;
       margin-right: 10px;
     }
 
     .contact-form button {
-      padding: 12px 20px;
       background: #0066ff;
       color: white;
       border: none;
-      border-radius: 6px;
-      font-size: 1em;
       cursor: pointer;
       transition: background 0.3s;
     }
@@ -170,7 +189,7 @@
     /* Responsive layout */
     @media (max-width: 768px) {
       .services {
-        grid-template-columns: 1fr;
+        flex-direction: column;
       }
     }
   </style>
@@ -200,45 +219,36 @@
   <div class="container">
     <h2 id="services">Our Services</h2>
 
+    <!-- Services Section -->
     <div class="services">
-
+      
       <!-- Legal & Litigation Support -->
-      <div style="border-left: 4px solid #0066ff;">
+      <div>
         <img src="binding-contract-948442_1280.jpg" alt="Legal and Litigation Support" style="width:100%; max-width:300px; margin-bottom:20px; border-radius:6px;">
         <h3>Legal & Litigation Support</h3>
-        <p>
-          We provide discreet, research-driven legal and litigation support for solo practitioners and boutique law firms who demand precision, confidentiality, and follow-through.
-        </p>
-        <p>
-          Our services cover the full spectrum of legal work, from detailed legal research to motion drafting, litigation support, and trademark administration. We help you stay organized, compliant, and focused on winning your cases.
-        </p>
+        <p>We provide expert research, motion drafting, litigation support, and trademark administration services to help you stay organized and focused on your cases.</p>
         <ul>
-          <li>Comprehensive legal research and analytical support</li>
+          <li>Comprehensive legal research and analysis</li>
           <li>Drafting pleadings, motions, and discovery materials</li>
-          <li>Trial preparation assistance</li>
-          <li>Trademark clearance, filing, and docket management</li>
+          <li>Trial preparation and hearing support</li>
+          <li>Trademark clearance, filings, and docket management</li>
         </ul>
       </div>
 
     </div>
 
-    <!-- Contact Section -->
+    <!-- Contact Us Section -->
     <h2 id="contact" style="margin-top:60px;">Contact Us</h2>
-
-    <p style="color:#bbb; max-width:700px;">
-      If you have a specific challenge or project in mind, tell us a bit about it. We review all inquiries carefully and respond promptly.
-    </p>
+    <p>If you have a specific challenge or project in mind, tell us a bit about it. We review all inquiries carefully and respond promptly.</p>
 
     <form style="max-width:700px; margin-top:30px;">
-      <input type="text" placeholder="Your name" style="width:100%; padding:12px; margin-bottom:12px; border-radius:6px; border:none;">
-      <input type="email" placeholder="Your email address" style="width:100%; padding:12px; margin-bottom:12px; border-radius:6px; border:none;">
-      <textarea placeholder="Briefly describe your needs or challenges" rows="5" style="width:100%; padding:12px; margin-bottom:12px; border-radius:6px; border:none;"></textarea>
-      <button type="submit" style="background:#0066ff; color:white; padding:12px 24px; border:none; border-radius:6px; font-size:1em; cursor:pointer;">
-        Submit Inquiry
-      </button>
+      <input type="text" placeholder="Your name">
+      <input type="email" placeholder="Your email address">
+      <textarea placeholder="Describe your needs or challenges" rows="5"></textarea>
+      <button type="submit">Submit Inquiry</button>
     </form>
 
-    <!-- Newsletter Subscription Form -->
+    <!-- Subscription Form -->
     <div class="contact-form">
       <input type="email" placeholder="Your email address" />
       <button>Subscribe to Our Newsletter</button>
