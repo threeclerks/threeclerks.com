@@ -10,7 +10,7 @@
 
   <!-- Google Fonts for better typography -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Merriweather&display=swap" rel="stylesheet">
-  
+
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="icons8-cloud-link-windows-11-color-32.png">
 
@@ -100,21 +100,6 @@
       color: #0066ff;
     }
 
-    /* Image Row for Litigation Services */
-    .image-row {
-      display: flex;
-      justify-content: space-between;
-      gap: 15px;
-      margin-bottom: 30px;
-    }
-
-    .image-row img {
-      width: 32%;
-      height: auto;
-      object-fit: cover;
-      border-radius: 6px;
-    }
-
     .services {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -185,39 +170,29 @@
       background: #004d99;
     }
 
-    /* Remote Services Images */
-    .remote-image-row {
-      display: flex;
-      justify-content: space-between;
-      gap: 15px;
-      margin-top: 40px;
-    }
-
-    .remote-image-row img {
-      width: 32%;
-      height: auto;
-      object-fit: cover;
-      border-radius: 6px;
-    }
-
     /* Responsive layout */
     @media (max-width: 768px) {
       .services {
         grid-template-columns: 1fr;
       }
+    }
 
-      .image-row,
-      .remote-image-row {
-        flex-direction: column;
-        align-items: center;
-      }
+    /* Image styling */
+    .image-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      margin-bottom: 30px;
+    }
 
-      .services div {
-        margin-bottom: 20px;
-      }
+    .image-row img {
+      width: 32%;
+      height: auto;
+      border-radius: 6px;
     }
   </style>
 </head>
+
 <body>
 
   <!-- Hero Section -->
@@ -227,7 +202,7 @@
       <source src="homepage-hero-animation.mp4" type="video/mp4">
       Your browser does not support the video tag.
     </video>
-    
+
     <!-- Logo -->
     <img src="Three-Clerks-Logo.png" alt="Three Clerks Logo" class="logo">
   </header>
@@ -239,11 +214,11 @@
     <a href="#services">Explore Our Services</a>
   </div>
 
-  <!-- Images above Legal Services Section -->
+  <!-- Images Above Legal Services Section -->
   <div class="image-row">
-    <img src="binding-contract-948442_1280.jpg" alt="Legal Services" />
-    <img src="giammarco-boscaro-zeH-ljawHtg-unsplash.jpg" alt="Legal Support" />
-    <img src="engin-akyurt-A9_IsUtjHm4-unsplash.jpg" alt="Litigation Support" />
+    <img src="binding-contract-948442_1280.jpg" alt="Legal Services">
+    <img src="giammarco-boscaro-zeH-ljawHtg-unsplash.jpg" alt="Legal Services">
+    <img src="engin-akyurt-A9_IsUtjHm4-unsplash.jpg" alt="Legal Services">
   </div>
 
   <!-- Main Content Container -->
@@ -255,43 +230,62 @@
       <div>
         <h3>Legal & Litigation Support</h3>
         <p>
-          We deliver tailored legal and litigation solutions for boutique law firms and solo practitioners who require precision, confidentiality, and exceptional service.
+          At Three Clerks, we specialize in providing expert non-attorney legal and litigation support services tailored to the unique needs of boutique law firms and solo practitioners. We understand that legal professionals require not just expertise, but efficient operational support to maintain a competitive edge in an ever-evolving legal landscape.
         </p>
         <p>
-          From case research to courtroom readiness, we provide seamless support for your legal operations. Our expertise also extends to trademark administration, ensuring that your intellectual property needs are handled with the same level of diligence and care.
+          Our team acts as an extension of your legal practice, offering strategic solutions designed to help you optimize workflows and achieve better outcomes for your clients. From comprehensive case research to meticulous courtroom preparation, we ensure that you can focus on high-level strategy while we handle the critical support tasks that keep your cases on track.
+        </p>
+        <p>
+          Additionally, our trademark administration services help protect your clients' intellectual property, providing everything from clearance to filings and portfolio management. You can trust that we’ll handle all the details with the utmost diligence and care.
         </p>
         <ul>
           <li><strong>Comprehensive Legal Research & Case Analysis</strong></li>
+          <li>We provide in-depth, actionable research that helps inform your case strategy and supports your legal arguments.</li>
+
           <li><strong>Pleadings, Motions, Discovery, & Document Drafting</strong></li>
+          <li>Our team drafts precise, legally sound documents that align with your specific needs—ensuring clarity and compliance with all legal requirements.</li>
+
           <li><strong>Trial & Hearing Preparation</strong></li>
+          <li>We assist with all aspects of trial preparation, including witness statements, exhibits, and trial strategy, ensuring you're fully prepared for every stage of litigation.</li>
+
           <li><strong>Trademark Clearance, Filings & Portfolio Management</strong></li>
+          <li>Our trademark experts ensure that your clients’ intellectual property is protected with thorough clearance searches, filing services, and ongoing portfolio management.</li>
         </ul>
+
+        <p>
+          With a focus on accuracy, efficiency, and seamless integration into your practice, we provide you with the support needed to improve client outcomes and increase profitability. Let us handle the operational side, so you can focus on what matters most—providing exceptional legal counsel.
+        </p>
       </div>
     </div>
 
-    <!-- Remote Services Section -->
-    <div class="container">
-      <h2>Remote Services Available Nationwide</h2>
-      <p>We offer expert legal support, remotely, across the U.S. and internationally. No matter where you are located, we can assist with all your litigation and legal support needs.</p>
-      
-      <!-- Remote Services Images -->
-      <div class="remote-image-row">
-        <img src="guzman-barquin-C9XgrB8hqBI-unsplash.jpg" alt="Remote Legal Services" />
-        <img src="little-plant-RMXIn292QSs-unsplash.jpg" alt="Aloha Remote Services" />
-        <img src="maarten-van-den-heuvel-gZXx8lKAb7Y-unsplash.jpg" alt="Legal Support Services" />
-      </div>
+    <!-- Images Above Remote Services Section -->
+    <div class="image-row">
+      <img src="guzman-barquin-C9XgrB8hqBI-unsplash.jpg" alt="Remote Services">
+      <img src="little-plant-RMXIn292QSs-unsplash.jpg" alt="Remote Services">
+      <img src="maarten-van-den-heuvel-gZXx8lKAb7Y-unsplash.jpg" alt="Remote Services">
     </div>
 
     <!-- Contact Section -->
     <h2 id="contact" style="margin-top:60px;">Contact Us</h2>
-    <p style="color:#bbb; max-width:700px;">If you have a specific challenge or project in mind, tell us a bit about it. We review all inquiries carefully and respond promptly.</p>
+
+    <p style="color:#bbb; max-width:700px;">
+      If you have a specific challenge or project in mind, tell us a bit about it. We review all inquiries carefully and respond promptly.
+    </p>
 
     <form style="max-width:700px; margin-top:30px;">
       <input type="text" placeholder="Your name" style="width:100%; padding:12px; margin-bottom:12px; border-radius:6px; border:none;">
       <input type="email" placeholder="Your email address" style="width:100%; padding:12px; margin-bottom:12px; border-radius:6px; border:none;">
       <textarea placeholder="Briefly describe your needs or challenges" rows="5" style="width:100%; padding:12px; margin-bottom:12px; border-radius:6px; border:none;"></textarea>
-      <button type="submit" style="background:#0066ff; color:white; padding:12px 24px; border:none; border-radius:6px; font-size:1em; cursor:pointer;">Submit Inquiry</button>
+      <button type="submit" style="background:#0066ff; color:white; padding:12px 24px; border:none; border-radius:6px; font-size:1em; cursor:pointer;">
+        Submit Inquiry
+      </button>
     </form>
+
+    <!-- Subscription Form -->
+    <div class="contact-form">
+      <input type="email" placeholder="Your email address" />
+      <button>Subscribe to Our Newsletter</button>
+    </div>
 
     <!-- Footer Section -->
     <footer>
