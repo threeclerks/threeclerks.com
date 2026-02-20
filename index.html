@@ -12,7 +12,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Merriweather&display=swap" rel="stylesheet">
 
   <!-- Favicon -->
-  <link rel="icon" type="image/png" href="icons8-cloud-link-windows-11-color-32.png">
+  <link rel="icon" href="icons8-cloud-link-windows-11-color-32.png" type="image/png">
 
   <style>
     body {
@@ -26,7 +26,7 @@
     /* Hero Section with reduced size */
     header {
       position: relative;
-      height: 300px; /* Reduced height for hero section */
+      height: 300px;
       width: 100%;
       overflow: hidden;
     }
@@ -47,7 +47,7 @@
       position: absolute;
       top: 20px;
       left: 20px;
-      width: 200px; /* Adjust logo size */
+      width: 200px;
     }
 
     /* Hero Text Section */
@@ -122,6 +122,20 @@
       color: #bbb;
     }
 
+    .image-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      margin: 40px 0;
+    }
+
+    .image-row img {
+      width: 24%;
+      height: auto;
+      object-fit: cover;
+      border-radius: 6px;
+    }
+
     /* Footer */
     footer {
       text-align: center;
@@ -175,24 +189,13 @@
       .services {
         grid-template-columns: 1fr;
       }
-    }
 
-    /* Image styling */
-    .image-row {
-      display: flex;
-      justify-content: space-between;
-      gap: 10px;
-      margin-bottom: 30px;
-    }
-
-    .image-row img {
-      width: 32%;
-      height: auto;
-      border-radius: 6px;
+      .image-row img {
+        width: 100%;
+      }
     }
   </style>
 </head>
-
 <body>
 
   <!-- Hero Section -->
@@ -202,7 +205,7 @@
       <source src="homepage-hero-animation.mp4" type="video/mp4">
       Your browser does not support the video tag.
     </video>
-
+    
     <!-- Logo -->
     <img src="Three-Clerks-Logo.png" alt="Three Clerks Logo" class="logo">
   </header>
@@ -214,60 +217,58 @@
     <a href="#services">Explore Our Services</a>
   </div>
 
-  <!-- Images Above Legal Services Section -->
-  <div class="image-row">
-    <img src="binding-contract-948442_1280.jpg" alt="Legal Services">
-    <img src="giammarco-boscaro-zeH-ljawHtg-unsplash.jpg" alt="Legal Services">
-    <img src="engin-akyurt-A9_IsUtjHm4-unsplash.jpg" alt="Legal Services">
-  </div>
-
   <!-- Main Content Container -->
   <div class="container">
-    <h2 id="services">Our Services</h2>
 
-    <!-- Legal & Litigation Support -->
-    <div class="services">
-      <div>
-        <h3>Legal & Litigation Support</h3>
-        <p>
-          At Three Clerks, we specialize in providing expert non-attorney legal and litigation support services tailored to the unique needs of boutique law firms and solo practitioners. We understand that legal professionals require not just expertise, but efficient operational support to maintain a competitive edge in an ever-evolving legal landscape.
-        </p>
-        <p>
-          Our team acts as an extension of your legal practice, offering strategic solutions designed to help you optimize workflows and achieve better outcomes for your clients. From comprehensive case research to meticulous courtroom preparation, we ensure that you can focus on high-level strategy while we handle the critical support tasks that keep your cases on track.
-        </p>
-        <p>
-          Additionally, our trademark administration services help protect your clients' intellectual property, providing everything from clearance to filings and portfolio management. You can trust that we’ll handle all the details with the utmost diligence and care.
-        </p>
-        <ul>
-          <li><strong>Comprehensive Legal Research & Case Analysis</strong></li>
-          <li>We provide in-depth, actionable research that helps inform your case strategy and supports your legal arguments.</li>
+    <!-- Remote Services and Jurisdictions Section -->
+    <h2 style="margin-top:60px;">Jurisdictional Experience & Remote Services</h2>
+    <p style="color:#bbb; max-width:900px;">
+      Three Clerks provides remote litigation and legal support services to attorneys and firms across the United States and internationally. Our work is performed entirely remotely, allowing us to support matters efficiently regardless of location.
+    </p>
+    <p style="color:#bbb; max-width:900px;">
+      Our experience includes matters connected to multiple jurisdictions, including but not limited to D.C., Virginia, Maryland, California, Hawaii, Florida, Nevada, and Washington. We routinely support counsel handling multi-jurisdictional and cross-border matters.
+    </p>
 
-          <li><strong>Pleadings, Motions, Discovery, & Document Drafting</strong></li>
-          <li>Our team drafts precise, legally sound documents that align with your specific needs—ensuring clarity and compliance with all legal requirements.</li>
-
-          <li><strong>Trial & Hearing Preparation</strong></li>
-          <li>We assist with all aspects of trial preparation, including witness statements, exhibits, and trial strategy, ensuring you're fully prepared for every stage of litigation.</li>
-
-          <li><strong>Trademark Clearance, Filings & Portfolio Management</strong></li>
-          <li>Our trademark experts ensure that your clients’ intellectual property is protected with thorough clearance searches, filing services, and ongoing portfolio management.</li>
-        </ul>
-
-        <p>
-          With a focus on accuracy, efficiency, and seamless integration into your practice, we provide you with the support needed to improve client outcomes and increase profitability. Let us handle the operational side, so you can focus on what matters most—providing exceptional legal counsel.
-        </p>
-      </div>
+    <!-- Images Above Legal Services Section -->
+    <div class="image-row">
+      <img src="binding-contract-948442_1280.jpg" alt="Legal Support">
+      <img src="giammarco-boscaro-zeH-ljawHtg-unsplash.jpg" alt="Legal Research">
+      <img src="engin-akyurt-A9_IsUtjHm4-unsplash.jpg" alt="Litigation Preparation">
     </div>
+
+    <!-- Legal & Litigation Support Section -->
+    <h2>Legal & Litigation Support</h2>
+    <p>
+      At Three Clerks, we specialize in providing expert non-attorney legal and litigation support services tailored to the unique needs of boutique law firms and solo practitioners. We understand that legal professionals require not just expertise, but efficient operational support to maintain a competitive edge in an ever-evolving legal landscape.
+    </p>
+    <p>
+      Our team acts as an extension of your legal practice, offering strategic solutions designed to help you optimize workflows and achieve better outcomes for your clients. From comprehensive case research to meticulous courtroom preparation, we ensure that you can focus on high-level strategy while we handle the critical support tasks that keep your cases on track.
+    </p>
+    <p>
+      Additionally, our trademark administration services help protect your clients' intellectual property, providing everything from clearance to filings and portfolio management. You can trust that we’ll handle all the details with the utmost diligence and care.
+    </p>
+
+    <ul>
+      <li><strong>Comprehensive Legal Research & Case Analysis</strong> - We provide in-depth, actionable research that helps inform your case strategy and supports your legal arguments.</li>
+      <li><strong>Pleadings, Motions, Discovery, & Document Drafting</strong> - Our team drafts precise, legally sound documents that align with your specific needs—ensuring clarity and compliance with all legal requirements.</li>
+      <li><strong>Trial & Hearing Preparation</strong> - We assist with all aspects of trial preparation, including witness statements, exhibits, and trial strategy, ensuring you're fully prepared for every stage of litigation.</li>
+      <li><strong>Trademark Clearance, Filings & Portfolio Management</strong> - Our trademark experts ensure that your clients’ intellectual property is protected with thorough clearance searches, filing services, and ongoing portfolio management.</li>
+    </ul>
+
+    <p>
+      With a focus on accuracy, efficiency, and seamless integration into your practice, we provide you with the support needed to improve client outcomes and increase profitability. Let us handle the operational side, so you can focus on what matters most—providing exceptional legal counsel.
+    </p>
 
     <!-- Images Above Remote Services Section -->
     <div class="image-row">
-      <img src="guzman-barquin-C9XgrB8hqBI-unsplash.jpg" alt="Remote Services">
-      <img src="little-plant-RMXIn292QSs-unsplash.jpg" alt="Remote Services">
-      <img src="maarten-van-den-heuvel-gZXx8lKAb7Y-unsplash.jpg" alt="Remote Services">
+      <img src="guzman-barquin-C9XgrB8hqBI-unsplash.jpg" alt="Remote legal work">
+      <img src="little-plant-RMXIn292QSs-unsplash.jpg" alt="Global remote services">
+      <img src="maarten-van-den-heuvel-gZXx8lKAb7Y-unsplash.jpg" alt="Distributed teams">
+      <img src="tim-woody-Ca6_UQ0HxUM-unsplash.jpg" alt="Modern legal workflow">
     </div>
 
     <!-- Contact Section -->
     <h2 id="contact" style="margin-top:60px;">Contact Us</h2>
-
     <p style="color:#bbb; max-width:700px;">
       If you have a specific challenge or project in mind, tell us a bit about it. We review all inquiries carefully and respond promptly.
     </p>
@@ -280,12 +281,6 @@
         Submit Inquiry
       </button>
     </form>
-
-    <!-- Subscription Form -->
-    <div class="contact-form">
-      <input type="email" placeholder="Your email address" />
-      <button>Subscribe to Our Newsletter</button>
-    </div>
 
     <!-- Footer Section -->
     <footer>
