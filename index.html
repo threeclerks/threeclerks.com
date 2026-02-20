@@ -8,7 +8,7 @@
   <meta name="author" content="Three Clerks">
   <title>Three Clerks | Efficient Legal & Litigation Support, Tailored to Your Practice.</title>
 
-  <!-- Google Fonts for better typography -->
+  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Merriweather&display=swap" rel="stylesheet">
 
   <!-- Favicon -->
@@ -23,15 +23,13 @@
       color: #f1f1f1;
     }
 
-    /* Hero Section with reduced size */
+    /* Hero Section */
     header {
       position: relative;
       height: 300px;
       width: 100%;
       overflow: hidden;
     }
-
-    /* Fullscreen Video */
     header video {
       position: absolute;
       top: 0;
@@ -41,35 +39,28 @@
       object-fit: cover;
       z-index: -1;
     }
-
-    /* Logo Positioning */
     .logo {
       position: absolute;
       top: 20px;
       left: 20px;
       width: 200px;
     }
-
-    /* Hero Text Section */
     .hero-text {
       background-color: #121212;
       padding: 40px;
       text-align: center;
       color: white;
     }
-
     .hero-text h1 {
       font-size: 2.5em;
       margin: 0;
       text-transform: uppercase;
       font-family: 'Merriweather', serif;
     }
-
     .hero-text p {
       font-size: 1.2em;
       margin: 20px 0;
     }
-
     .hero-text a {
       background: #0066ff;
       color: white;
@@ -79,7 +70,6 @@
       border-radius: 6px;
       transition: background 0.3s;
     }
-
     .hero-text a:hover {
       background: #004d99;
     }
@@ -93,11 +83,24 @@
       border-radius: 12px;
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
     }
-
     h2 {
       font-size: 2.5em;
       margin-bottom: 20px;
       color: #0066ff;
+    }
+
+    /* Image rows */
+    .image-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      margin: 40px 0;
+    }
+    .image-row img {
+      width: 24%;
+      height: auto;
+      object-fit: contain;
+      border-radius: 8px;
     }
 
     .services {
@@ -105,35 +108,18 @@
       grid-template-columns: 1fr 1fr;
       gap: 20px;
     }
-
     .services div {
       padding: 20px;
       background: #2a2a2a;
       border-radius: 8px;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     }
-
     .services h3 {
       color: #0066ff;
       font-size: 1.6em;
     }
-
     .services p {
       color: #bbb;
-    }
-
-    .image-row {
-      display: flex;
-      justify-content: space-between;
-      gap: 12px;
-      margin: 40px 0;
-    }
-
-    .image-row img {
-      width: 24%;
-      height: auto;
-      object-fit: cover;
-      border-radius: 6px;
     }
 
     /* Footer */
@@ -143,12 +129,10 @@
       font-size: 0.9em;
       color: #888;
     }
-
     footer a {
       color: #0066ff;
       text-decoration: none;
     }
-
     footer a:hover {
       text-decoration: underline;
     }
@@ -159,7 +143,6 @@
       justify-content: center;
       margin-top: 40px;
     }
-
     .contact-form input {
       padding: 12px;
       border-radius: 6px;
@@ -168,7 +151,6 @@
       width: 300px;
       margin-right: 10px;
     }
-
     .contact-form button {
       padding: 12px 20px;
       background: #0066ff;
@@ -179,19 +161,16 @@
       cursor: pointer;
       transition: background 0.3s;
     }
-
     .contact-form button:hover {
       background: #004d99;
     }
 
-    /* Responsive layout */
     @media (max-width: 768px) {
-      .services {
-        grid-template-columns: 1fr;
-      }
-
       .image-row img {
         width: 100%;
+      }
+      .services {
+        grid-template-columns: 1fr;
       }
     }
   </style>
@@ -200,77 +179,73 @@
 
   <!-- Hero Section -->
   <header>
-    <!-- Fullscreen Video -->
     <video autoplay muted loop>
       <source src="homepage-hero-animation.mp4" type="video/mp4">
       Your browser does not support the video tag.
     </video>
-    
-    <!-- Logo -->
     <img src="Three-Clerks-Logo.png" alt="Three Clerks Logo" class="logo">
   </header>
 
-  <!-- Hero Text Section Below the Video -->
   <div class="hero-text">
     <h1>From Legal & Litigation Support to Creative Innovation—We Make It Simple.</h1>
     <p>Efficient Legal & Litigation Support, Tailored to Your Practice.</p>
     <a href="#services">Explore Our Services</a>
   </div>
 
-<!-- Images Above the Legal Services Section -->
-<div class="image-row">
-  <img src="binding-contract-948442_1280.jpg" alt="Binding Contract" style="width: 33.33%; padding-right: 10px;">
-  <img src="giammarco-boscaro-zeH-ljawHtg-unsplash.jpg" alt="Contract Signing" style="width: 33.33%; padding-right: 10px;">
-  <img src="engin-akyurt-A9_IsUtjHm4-unsplash.jpg" alt="Legal Services" style="width: 33.33%; padding-right: 10px;">
-</div>
-  
-  <!-- Main Content Container -->
+  <!-- Images Above the Legal Services Section -->
+  <div class="image-row">
+    <img src="binding-contract-948442_1280.jpg" alt="Binding Contract">
+    <img src="giammarco-boscaro-zeH-ljawHtg-unsplash.jpg" alt="Contract Signing">
+    <img src="engin-akyurt-A9_IsUtjHm4-unsplash.jpg" alt="Legal Services">
+  </div>
+
+  <!-- Main Content -->
   <div class="container">
 
-   <!-- Remote Services and Jurisdictions Section -->
-<h2 style="margin-top:60px;">Global Reach, Local Expertise</h2>
-<p style="color:#bbb; max-width:900px;">
-  Three Clerks provides remote litigation and legal support services to attorneys and firms across the United States and internationally. Our work is performed entirely remotely, allowing us to support matters efficiently regardless of location.
-</p>
-<p style="color:#bbb; max-width:900px;">
-  Our experience includes matters connected to multiple jurisdictions, including but not limited to D.C., Virginia, Maryland, California, Hawaii, Florida, Nevada, and Washington. We routinely support counsel handling multi-jurisdictional and cross-border matters.
-</p>
+    <!-- Remote Services + Global Reach -->
+    <h2>Global Reach, Local Expertise</h2>
+    <p style="color:#bbb; max-width:900px;">
+      Three Clerks provides remote litigation and legal support services to attorneys and firms across the United States and internationally. Our work is performed entirely remotely, allowing us to support matters efficiently regardless of location.
+    </p>
+    <p style="color:#bbb; max-width:900px;">
+      Our experience includes matters connected to multiple jurisdictions, including but not limited to D.C., Virginia, Maryland, California, Hawaii, Florida, Nevada, and Washington. We routinely support counsel handling multi-jurisdictional and cross-border matters.
+    </p>
 
     <!-- Legal & Litigation Support Section -->
-    <h2>Legal & Litigation Support</h2>
+    <h2 id="services">Legal & Litigation Support</h2>
     <p>
-      At Three Clerks, we specialize in providing expert non-attorney legal and litigation support services tailored to the unique needs of boutique law firms and solo practitioners. We understand that legal professionals require not just expertise, but efficient operational support to maintain a competitive edge in an ever-evolving legal landscape.
+      At Three Clerks, we specialize in providing expert non-attorney legal and litigation support services tailored to the unique needs of boutique law firms and solo practitioners. Legal professionals need not just expertise—but efficient operational support to maintain a competitive edge in an ever-evolving landscape.
     </p>
     <p>
-      Our team acts as an extension of your legal practice, offering strategic solutions designed to help you optimize workflows and achieve better outcomes for your clients. From comprehensive case research to meticulous courtroom preparation, we ensure that you can focus on high-level strategy while we handle the critical support tasks that keep your cases on track.
+      Our team acts as an extension of your practice, offering strategic solutions designed to help optimize workflows and achieve better outcomes for your clients. From comprehensive case research to meticulous courtroom preparation, we handle the critical support tasks so you can focus on high-level strategy.
     </p>
     <p>
-      Additionally, our trademark administration services help protect your clients' intellectual property, providing everything from clearance to filings and portfolio management. You can trust that we’ll handle all the details with the utmost diligence and care.
+      Additionally, our trademark administration services protect your clients’ intellectual property, providing everything from clearance to filings and portfolio management. You can trust we’ll handle all details efficiently and professionally.
     </p>
 
     <ul>
-      <li><strong>Comprehensive Legal Research & Case Analysis</strong> - We provide in-depth, actionable research that helps inform your case strategy and supports your legal arguments.</li>
-      <li><strong>Pleadings, Motions, Discovery, & Document Drafting</strong> - Our team drafts precise, legally sound documents that align with your specific needs—ensuring clarity and compliance with all legal requirements.</li>
-      <li><strong>Trial & Hearing Preparation</strong> - We assist with all aspects of trial preparation, including witness statements, exhibits, and trial strategy, ensuring you're fully prepared for every stage of litigation.</li>
-      <li><strong>Trademark Clearance, Filings & Portfolio Management</strong> - Our trademark experts ensure that your clients’ intellectual property is protected with thorough clearance searches, filing services, and ongoing portfolio management.</li>
+      <li><strong>Comprehensive Legal Research & Case Analysis</strong> – In-depth, actionable research that informs strategy and strengthens arguments.</li>
+      <li><strong>Pleadings, Motions, Discovery & Document Drafting</strong> – Precise, legally sound drafting customized for your needs.</li>
+      <li><strong>Trial & Hearing Preparation</strong> – Coordination of exhibits, witness prep, strategy support, and readiness tracking.</li>
+      <li><strong>Trademark Clearance, Filings & Portfolio Management</strong> – Thorough clearance, filings, and ongoing IP portfolio services.</li>
     </ul>
 
     <p>
-      With a focus on accuracy, efficiency, and seamless integration into your practice, we provide you with the support needed to improve client outcomes and increase profitability. Let us handle the operational side, so you can focus on what matters most—providing exceptional legal counsel.
+      With a focus on accuracy, efficiency, and seamless integration into your practice, we provide the support needed to improve client outcomes and increase profitability. Let us handle operational details, so you can focus on exceptional legal counsel.
     </p>
 
-  <!-- Images Above the Remote Services Section -->
-<div class="image-row">
-  <img src="guzman-barquin-C9XgrB8hqBI-unsplash.jpg" alt="Image 1" class="service-image">
-  <img src="little-plant-RMXIn292QSs-unsplash.jpg" alt="Aloha" class="service-image">
-  <img src="maarten-van-den-heuvel-gZXx8lKAb7Y-unsplash.jpg" alt="Image 3" class="service-image">
-  <img src="tim-woody-Ca6_UQ0HxUM-unsplash.jpg" alt="Image 4" class="service-image"> <!-- Updated to tim-woody image -->
-</div>
+    <!-- Images Above Remote Services Section -->
+    <div class="image-row">
+      <img src="guzman-barquin-C9XgrB8hqBI-unsplash.jpg" alt="Remote legal work">
+      <img src="little-plant-RMXIn292QSs-unsplash.jpg" alt="Aloha remote services">
+      <img src="maarten-van-den-heuvel-gZXx8lKAb7Y-unsplash.jpg" alt="Distributed support">
+      <img src="tim-woody-Ca6_UQ0HxUM-unsplash.jpg" alt="Modern workflow">
+    </div>
 
-    <!-- Contact Section -->
+    <!-- Contact Form -->
     <h2 id="contact" style="margin-top:60px;">Contact Us</h2>
     <p style="color:#bbb; max-width:700px;">
-      If you have a specific challenge or project in mind, tell us a bit about it. We review all inquiries carefully and respond promptly.
+      If you have a specific challenge or project in mind, tell us a bit about it. We review inquiries carefully and respond promptly.
     </p>
 
     <form style="max-width:700px; margin-top:30px;">
@@ -282,12 +257,12 @@
       </button>
     </form>
 
-    <!-- Footer Section -->
+    <!-- Footer -->
     <footer>
       <p>© 2026 Three Clerks, Inc. | <a href="mailto:threeclerks@proton.me">Email Us</a></p>
       <p><a href="#services">Back to Services</a> | <a href="#">Privacy Policy</a></p>
     </footer>
-  </div>
 
+  </div>
 </body>
 </html>
