@@ -23,7 +23,7 @@
     /* Hero Section with reduced size */
     header {
       position: relative;
-      height: 300px;
+      height: 300px; /* Reduced height for hero section */
       width: 100%;
       overflow: hidden;
     }
@@ -44,7 +44,7 @@
       position: absolute;
       top: 20px;
       left: 20px;
-      width: 200px;
+      width: 200px; /* Adjust logo size */
     }
 
     /* Hero Text Section */
@@ -97,45 +97,26 @@
       color: #0066ff;
     }
 
-    /* Services Section */
     .services {
-      display: flex;
-      flex-direction: column;
-      gap: 40px;
-      margin-top: 40px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
     }
 
     .services div {
+      padding: 20px;
       background: #2a2a2a;
-      padding: 30px;
       border-radius: 8px;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      transition: transform 0.3s;
-    }
-
-    .services div:hover {
-      transform: translateY(-10px);
     }
 
     .services h3 {
       color: #0066ff;
-      font-size: 1.8em;
-      margin-bottom: 10px;
+      font-size: 1.6em;
     }
 
     .services p {
       color: #bbb;
-      margin-bottom: 10px;
-    }
-
-    .services ul {
-      list-style-type: none;
-      padding: 0;
-    }
-
-    .services ul li {
-      color: #bbb;
-      margin: 5px 0;
     }
 
     /* Footer */
@@ -155,29 +136,29 @@
       text-decoration: underline;
     }
 
-    /* Contact Form */
+    /* Subscription Form */
     .contact-form {
       display: flex;
       justify-content: center;
       margin-top: 40px;
     }
 
-    .contact-form input,
-    .contact-form button {
+    .contact-form input {
       padding: 12px;
       border-radius: 6px;
+      border: none;
       font-size: 1em;
-    }
-
-    .contact-form input {
       width: 300px;
       margin-right: 10px;
     }
 
     .contact-form button {
+      padding: 12px 20px;
       background: #0066ff;
       color: white;
       border: none;
+      border-radius: 6px;
+      font-size: 1em;
       cursor: pointer;
       transition: background 0.3s;
     }
@@ -189,9 +170,23 @@
     /* Responsive layout */
     @media (max-width: 768px) {
       .services {
-        flex-direction: column;
+        grid-template-columns: 1fr;
       }
     }
+
+    /* Image Style */
+    .image-row {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 20px;
+    }
+
+    .image-row img {
+      width: 32%;
+      height: auto;
+      border-radius: 6px;
+    }
+
   </style>
 </head>
 <body>
@@ -217,9 +212,15 @@
 
   <!-- Main Content Container -->
   <div class="container">
-  <h2 id="services" style="font-size: 2.5em; margin-bottom: 20px; color: #0066ff;">Our Legal & Litigation Expertise</h2>
 
-  <div class="services">
+    <h2 id="services" style="font-size: 2.5em; margin-bottom: 20px; color: #0066ff;">Our Legal & Litigation Expertise</h2>
+
+    <!-- Three images in a row at the top -->
+    <div class="image-row">
+      <img src="binding-contract-948442_1280.jpg" alt="Legal and Litigation Support" />
+      <img src="engin-akyurt-A9_IsUtjHm4-unsplash.jpg" alt="Legal Services Image 2" />
+      <img src="giammarco-boscaro-zeH-ljawHtg-unsplash.jpg" alt="Legal Services Image 3" />
+    </div>
 
     <!-- Legal & Litigation Support -->
     <div style="border-left: 4px solid #0066ff; padding-left: 20px; margin-bottom: 40px;">
@@ -248,37 +249,26 @@
       <p>
         Let us help you focus on what you do best—providing exceptional legal counsel to your clients—while we take care of the details.
       </p>
-
-      <!-- Three images in a row -->
-      <div style="display: flex; justify-content: space-between; margin-top: 20px;">
-        <img src="binding-contract-948442_1280.jpg" alt="Legal and Litigation Support" style="width: 32%; height: auto; border-radius: 6px;">
-        <img src="engin-akyurt-A9_IsUtjHm4-unsplash.jpg" alt="Legal Services Image 2" style="width: 32%; height: auto; border-radius: 6px;">
-        <img src="giammarco-boscaro-zeH-ljawHtg-unsplash.jpg" alt="Legal Services Image 3" style="width: 32%; height: auto; border-radius: 6px;">
-      </div>
-
     </div>
-  </div>
-</div>
-      <!-- Contact Us Section -->
-<h2 id="contact" style="margin-top:60px;">Contact Us</h2>
-<p>If you have a specific legal challenge or need expert assistance, tell us about it, and we’ll get back to you promptly.</p>
 
-<form action="/submit-form" method="POST" style="max-width:700px; margin-top:30px;">
-  <div style="margin-bottom: 12px;">
-    <input type="text" placeholder="Your name" name="name" required style="width:100%; padding:12px; margin-bottom:12px; border-radius:6px; border:none;">
-  </div>
-  <div style="margin-bottom: 12px;">
-    <input type="email" placeholder="Your email address" name="email" required style="width:100%; padding:12px; margin-bottom:12px; border-radius:6px; border:none;">
-  </div>
-  <div style="margin-bottom: 12px;">
-    <textarea placeholder="Briefly describe your legal needs or challenges" rows="5" name="message" required style="width:100%; padding:12px; margin-bottom:12px; border-radius:6px; border:none;"></textarea>
-  </div>
-  <button type="submit" style="background:#0066ff; color:white; padding:12px 24px; border:none; border-radius:6px; font-size:1em; cursor:pointer; width:100%; transition:background 0.3s;">
-    Submit Inquiry
-  </button>
-</form>
-    <!-- Newsletter Subscription Form -->
-    <div class="contact-form">
+    <!-- Contact Section -->
+    <h2 id="contact" style="margin-top:60px;">Contact Us</h2>
+
+    <p style="color:#bbb; max-width:700px;">
+      If you have a specific challenge or project in mind, tell us a bit about it. We review all inquiries carefully and respond promptly.
+    </p>
+
+    <form style="max-width:700px; margin-top:30px;">
+      <input type="text" placeholder="Your name" style="width:100%; padding:12px; margin-bottom:12px; border-radius:6px; border:none;">
+      <input type="email" placeholder="Your email address" style="width:100%; padding:12px; margin-bottom:12px; border-radius:6px; border:none;">
+      <textarea placeholder="Briefly describe your needs or challenges" rows="5" style="width:100%; padding:12px; margin-bottom:12px; border-radius:6px; border:none;"></textarea>
+      <button type="submit" style="background:#0066ff; color:white; padding:12px 24px; border:none; border-radius:6px; font-size:1em; cursor:pointer;">
+        Submit Inquiry
+      </button>
+    </form>
+
+    <!-- Subscription Form -->
+    <div class="contact-form" style="margin-top: 40px;">
       <input type="email" placeholder="Your email address" />
       <button>Subscribe to Our Newsletter</button>
     </div>
