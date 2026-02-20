@@ -10,7 +10,10 @@
 
   <!-- Google Fonts for better typography -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Merriweather&display=swap" rel="stylesheet">
-  
+
+  <!-- Favicon -->
+  <link rel="icon" href="icons8-cloud-link-windows-11-color-32.png" type="image/png">
+
   <style>
     body {
       font-family: 'Montserrat', sans-serif;
@@ -23,7 +26,7 @@
     /* Hero Section with reduced size */
     header {
       position: relative;
-      height: 300px; /* Reduced height for hero section */
+      height: 300px;
       width: 100%;
       overflow: hidden;
     }
@@ -44,7 +47,7 @@
       position: absolute;
       top: 20px;
       left: 20px;
-      width: 200px; /* Adjust logo size */
+      width: 200px;
     }
 
     /* Hero Text Section */
@@ -119,6 +122,21 @@
       color: #bbb;
     }
 
+    /* Image Grid for Legal Services Section */
+    .image-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      margin-top: 30px;
+    }
+
+    .image-row img {
+      width: 32%;
+      height: auto;
+      object-fit: cover;
+      border-radius: 6px;
+    }
+
     /* Footer */
     footer {
       text-align: center;
@@ -167,21 +185,6 @@
       background: #004d99;
     }
 
-    /* Image Grid for Remote Services Section */
-    .image-row {
-      display: flex;
-      justify-content: space-between;
-      gap: 10px;
-      margin-top: 30px;
-    }
-
-    .image-row img {
-      width: 32%;
-      height: auto;
-      object-fit: cover;
-      border-radius: 6px;
-    }
-
     /* Responsive layout */
     @media (max-width: 768px) {
       .services {
@@ -215,6 +218,13 @@
   <div class="container">
     <h2 id="services">Our Services</h2>
 
+    <!-- Three Images Above Legal Services Section -->
+    <div class="image-row">
+      <img src="engin-akyurt-A9_IsUtjHm4-unsplash.jpg" alt="Professional Workspace">
+      <img src="giammarco-boscaro-zeH-ljawHtg-unsplash.jpg" alt="Work Environment">
+      <img src="little-plant-RMXIn292QSs-unsplash.jpg" alt="Plant in Office">
+    </div>
+
     <!-- Legal & Litigation Support Section -->
     <div class="services">
       <div>
@@ -222,36 +232,28 @@
         <h3>Legal & Litigation Support</h3>
         <p>We deliver tailored legal solutions, research, and litigation support for boutique law firms and solo practitioners who demand precision, confidentiality, and excellence.</p>
         <ul>
-          <li>Comprehensive Legal Research & Case Analysis</li>
-          <li>Pleadings, Motions, Discovery & Document Drafting</li>
-          <li>Trial & Hearing Preparation</li>
-          <li>Trademark Clearance, Filings & Portfolio Management</li>
+          <li><strong>Comprehensive Legal Research & Case Analysis:</strong> We deliver in-depth, timely research and case analysis, helping you build stronger arguments and make informed decisions for your clients.</li>
+          <li><strong>Pleadings, Motions, Discovery & Document Drafting:</strong> Our expert team drafts high-quality legal documents, from pleadings to motions to discovery responses, ensuring clarity and compliance with all legal requirements.</li>
+          <li><strong>Trial & Hearing Preparation:</strong> We meticulously prepare all aspects of your case, from witness statements to exhibits, ensuring you're fully prepared for every trial or hearing.</li>
+          <li><strong>Trademark Clearance, Filings & Portfolio Management:</strong> Protect your clients’ intellectual property with expert trademark clearance, filings, and ongoing portfolio management. We handle all aspects of trademark law, so you can focus on what matters most: your clients.</li>
         </ul>
       </div>
-      <div>
-        <img src="engin-akyurt-A9_IsUtjHm4-unsplash.jpg" alt="Professional Workspace" style="width:100%; max-width:300px; margin-bottom:20px;">
-        <img src="giammarco-boscaro-zeH-ljawHtg-unsplash.jpg" alt="Work Environment" style="width:100%; max-width:300px; margin-bottom:20px;">
-        <img src="little-plant-RMXIn292QSs-unsplash.jpg" alt="Plant in Office" style="width:100%; max-width:300px; margin-bottom:20px;">
-      </div>
     </div>
 
-    <!-- Remote Services Section -->
+    <!-- Jurisdiction & Remote Services Section -->
     <h3>Jurisdiction & Remote Services</h3>
     <p>
-      At Three Clerks, we provide seamless legal support to clients across the United States, including D.C., VA, MD, CA, HI, FL, NV, and WA, with the ability to extend our services to international clients as well. Whether your firm is located in one of these states or anywhere else, we are fully equipped to assist you remotely, wherever you may be.
-    </p>
-    <p>
-      Our team is set up to offer expert legal services remotely, allowing you to operate seamlessly, no matter where you or your clients are located. Whether you're based in the U.S. or internationally, our services are designed to integrate smoothly with your practice.
+      At Three Clerks, we provide seamless legal support to clients across the United States, including D.C., VA, MD, CA, HI, FL, NV, and WA, with the ability to extend our services to international clients as well. Whether your firm is located in one of these states or anywhere else, we are fully equipped to assist you remotely, wherever you are.
     </p>
 
-    <!-- Additional Images Section -->
+    <!-- Photos for Remote Services Section -->
     <div class="image-row">
-      <img src="guzman-barquin-C9XgrB8hqBI-unsplash.jpg" alt="Professional Workspace">
-      <img src="little-plant-RMXIn292QSs-unsplash.jpg" alt="Productivity Tools">
-      <img src="maarten-van-den-heuvel-gZXx8lKAb7Y-unsplash.jpg" alt="Work From Anywhere">
+      <img src="guzman-barquin-C9XgrB8hqBI-unsplash.jpg" alt="Remote Legal Service">
+      <img src="maarten-van-den-heuvel-gZXx8lKAb7Y-unsplash.jpg" alt="Flexible Service">
+      <img src="tim-woody-Ca6_UQ0HxUM-unsplash.jpg" alt="Remote Consultation">
     </div>
 
-    <!-- Contact Section -->
+    <!-- Contact Form Section -->
     <h2 id="contact" style="margin-top:60px;">Contact Us</h2>
     <p style="color:#bbb; max-width:700px;">
       If you have a specific challenge or project in mind, tell us a bit about it. We review all inquiries carefully and respond promptly.
@@ -278,7 +280,5 @@
     </footer>
   </div>
 
-  <!-- Favicon -->
-  <link rel="icon" href="icons8-cloud-link-windows-11-color-32.png" type="image/png">
 </body>
 </html>
