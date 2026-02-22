@@ -22,6 +22,29 @@
       color: #f1f1f1;
     }
 
+    /* Skip Link */
+    .skip-link {
+      position: absolute;
+      left: -9999px;
+      top: auto;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+    }
+
+    .skip-link:focus {
+      position: static;
+      width: auto;
+      height: auto;
+      margin: 10px;
+      padding: 8px 12px;
+      background: #0066ff;
+      color: #ffffff;
+      text-decoration: none;
+      border-radius: 4px;
+      z-index: 1000;
+    }
+
     header {
       display: flex;
       align-items: center;
@@ -31,6 +54,10 @@
 
     .logo {
       width: 180px;
+    }
+
+    main {
+      display: block;
     }
 
     .container {
@@ -77,6 +104,31 @@
       font-weight: 500;
     }
 
+    /* CTA Block */
+    .cta-block {
+      margin-top: 50px;
+      padding: 30px;
+      background: #181818;
+      border-left: 4px solid #0066ff;
+      border-radius: 6px;
+    }
+
+    .cta-text {
+      color: #bbb;
+      line-height: 1.7;
+      margin-bottom: 10px;
+    }
+
+    .cta-link a {
+      color: #0066ff;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .cta-link a:hover {
+      text-decoration: underline;
+    }
+
     footer {
       text-align: center;
       margin: 60px 0 40px;
@@ -92,34 +144,13 @@
     footer a:hover {
       text-decoration: underline;
     }
-
-    .cta-block {
-  margin-top: 50px;
-  padding: 30px;
-  background: #181818;
-  border-left: 4px solid #0066ff;
-  border-radius: 6px;
-}
-
-.cta-text {
-  color: #bbb;
-  line-height: 1.7;
-  margin-bottom: 10px;
-}
-
-.cta-link a {
-  color: #0066ff;
-  text-decoration: none;
-  font-weight: 500;
-}
-
-.cta-link a:hover {
-  text-decoration: underline;
-}
   </style>
 </head>
 
 <body>
+
+  <!-- Skip to Content -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
 
   <!-- Header / Logo -->
   <header>
@@ -129,81 +160,88 @@
   </header>
 
   <!-- Main Content -->
-  <div class="container">
+  <main>
+    <div class="container" id="main-content">
 
-    <h1>Digital Infrastructure & Web Services</h1>
+      <h1>Digital Infrastructure & Web Services</h1>
 
-    <p>
-      Three Clerks provides digital infrastructure and web services designed for attorneys, consultants, and professional service firms that require a clear, credible, and reliable online presence.
-    </p>
+      <p>
+        Three Clerks provides digital infrastructure and web services designed for attorneys,
+        consultants, and professional service firms that require a clear, credible, and reliable
+        online presence to support their work.
+      </p>
 
-    <p>
-      We focus on building and maintaining client-facing systems that support professional workflows, reinforce trust, and operate reliably over time. Our approach emphasizes clarity, performance, accessibility, and long-term maintainability — not trend-driven design.
-    </p>
+      <p>
+        We focus on building and maintaining client-facing systems that support professional workflows,
+        reinforce trust, and operate reliably over time. Our approach emphasizes clarity, performance,
+        accessibility, and long-term maintainability — not trend-driven design.
+      </p>
 
-    <h2>What We Do</h2>
+      <h2>What We Do</h2>
 
-    <p>
-      Our digital services are designed to complement professional practices that value accuracy, discretion, and operational efficiency.
-    </p>
+      <p>
+        Our digital services are designed to complement professional practices that value accuracy,
+        discretion, and operational efficiency.
+      </p>
 
-    <ul>
-      <li><span class="highlight">Website creation and modernization</span> for professional service firms, including attorneys and consultants.</li>
-      <li><span class="highlight">Compliance-aware design</span> with attention to accessibility, privacy, and professional standards.</li>
-      <li><span class="highlight">Performance-focused builds</span> that load quickly, function reliably, and scale cleanly.</li>
-      <li><span class="highlight">Content-driven structure</span> that communicates expertise clearly without unnecessary complexity.</li>
-      <li><span class="highlight">Ongoing maintenance and updates</span> to ensure stability and relevance over time.</li>
-    </ul>
+      <ul>
+        <li><span class="highlight">Website creation and modernization</span> for professional service firms, including attorneys and consultants.</li>
+        <li><span class="highlight">Compliance-aware design</span> with attention to accessibility, privacy, and professional standards.</li>
+        <li><span class="highlight">Performance-focused builds</span> that load quickly, function reliably, and scale cleanly.</li>
+        <li><span class="highlight">Content-driven structure</span> that communicates expertise clearly without unnecessary complexity.</li>
+        <li><span class="highlight">Ongoing maintenance and updates</span> to ensure stability and relevance over time.</li>
+      </ul>
 
-    <h2>Who This Is For</h2>
+      <h2>Who This Is For</h2>
 
-    <p>
-      Our digital infrastructure services are intended for:
-    </p>
+      <p>
+        Our digital infrastructure services are intended for:
+      </p>
 
-    <ul>
-      <li>Solo practitioners and boutique law firms</li>
-      <li>Professional service providers and consultants</li>
-      <li>Organizations that require a credible, low-maintenance web presence</li>
-      <li>Clients who prefer clear communication over visual excess</li>
-    </ul>
+      <ul>
+        <li>Solo practitioners and boutique law firms</li>
+        <li>Professional service providers and consultants</li>
+        <li>Organizations that require a credible, low-maintenance web presence</li>
+        <li>Clients who prefer clear communication over visual excess</li>
+      </ul>
 
-    <h2>Our Approach</h2>
+      <h2>Our Approach</h2>
 
-    <p>
-      We treat digital infrastructure as an extension of professional operations. That means we prioritize:
-    </p>
+      <p>
+        We treat digital infrastructure as an extension of professional operations. That means we prioritize:
+      </p>
 
-    <ul>
-      <li>Clear information architecture</li>
-      <li>Durable technical decisions</li>
-      <li>Accessibility and usability</li>
-      <li>Security and privacy awareness</li>
-      <li>Design choices that age well</li>
-    </ul>
+      <ul>
+        <li>Clear information architecture</li>
+        <li>Durable technical decisions</li>
+        <li>Accessibility and usability</li>
+        <li>Security and privacy awareness</li>
+        <li>Design choices that age well</li>
+      </ul>
 
-    <p>
-      The result is a web presence that supports your work without demanding constant attention or redesign.
-    </p>
+      <p>
+        The result is a web presence that supports your work without demanding constant attention or redesign.
+      </p>
 
-    <h2>Inquiries</h2>
+      <h2>Inquiries</h2>
 
-  <!-- Subtle CTA -->
-<div class="cta-block">
-  <p class="cta-text">
-    If you’re evaluating your current web presence or considering a new build,
-    we’re happy to discuss whether digital infrastructure support would be useful
-    for your practice.
-  </p>
-  <p class="cta-link">
-    <a href="/#contact">Submit a confidential inquiry</a>
-  </p>
-</div>
+      <!-- Subtle CTA -->
+      <div class="cta-block">
+        <p class="cta-text">
+          If you’re evaluating your current web presence or considering a new build,
+          we’re happy to discuss whether digital infrastructure support may be appropriate
+          for your practice.
+        </p>
+        <p class="cta-link">
+          <a href="/#contact">Submit a confidential inquiry</a>
+        </p>
+      </div>
 
-  </div>
+    </div>
+  </main>
 
   <!-- Footer -->
-  <footer>
+  <footer role="contentinfo">
     <p>
       © 2026 Three Clerks, Inc. ·
       <a href="/#services">Services</a> ·
