@@ -1,254 +1,177 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <link rel="icon" href="/icons8-cloud-link-windows-11-color-32.png" type="image/png">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Three Clerks offers professional legal, writing, and creative services, including AI solutions, to businesses and individuals. Get a free consultation today.">
-  <meta name="keywords" content="legal services, writing services, AI consulting, creative solutions, business consulting, legal research, chatbots, video editing">
+  <meta name="description" content="Create and deploy blockchain-based smart contracts.">
+  <meta name="keywords" content="blockchain, smart contracts, Ethereum, Polygon, automation, payments">
   <meta name="author" content="Three Clerks">
-  <title>Three Clerks | Efficient Legal & Litigation Support, Tailored to Your Practice.</title>
+  <title>Smart Contract Creation Service | Three Clerks</title>
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Merriweather&display=swap" rel="stylesheet">
 
   <!-- Favicon -->
-  <link rel="icon" href="icons8-cloud-link-windows-11-color-32.png" type="image/png">
+  <link rel="icon" href="/icons8-cloud-link-windows-11-color-32.png" type="image/png">
 
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/web3/1.2.9/web3.min.js"></script> <!-- Web3.js for interacting with Ethereum -->
-  <script src="https://js.stripe.com/v3/"></script> <!-- Stripe JS -->
-
+  <!-- Styles -->
   <style>
     body {
       font-family: 'Montserrat', sans-serif;
       margin: 0;
       padding: 0;
-      background: #121212;
-      color: #f1f1f1;
+      background: #f5f5f5;
+      color: #333;
     }
 
-    /* Hero Section */
     header {
-      position: relative;
-      height: 300px;
-      width: 100%;
-      overflow: hidden;
-    }
-    header video {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      z-index: -1;
-    }
-    .logo {
-      position: absolute;
-      top: 20px;
-      left: 20px;
-      width: 200px;
-    }
-    .hero-text {
-      background-color: #121212;
-      padding: 40px;
+      background-color: #0066ff;
+      padding: 20px;
+      color: white;
       text-align: center;
-      color: white;
     }
-    .hero-text h1 {
-      font-size: 2.5em;
-      margin: 0;
-      text-transform: uppercase;
+
+    header h1 {
       font-family: 'Merriweather', serif;
-    }
-    .hero-text p {
-      font-size: 1.2em;
-      margin: 20px 0;
-    }
-    .hero-text a {
-      background: #0066ff;
-      color: white;
-      padding: 12px 24px;
-      text-decoration: none;
-      font-size: 1.2em;
-      border-radius: 6px;
-      transition: background 0.3s;
-    }
-    .hero-text a:hover {
-      background: #004d99;
-    }
-
-    /* Main Content */
-    .container {
-      max-width: 900px;
-      margin: 30px auto;
-      background: #1d1d1d;
-      padding: 40px;
-      border-radius: 12px;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-    }
-    h2 {
       font-size: 2.5em;
-      margin-bottom: 20px;
-      color: #0066ff;
     }
 
-    /* Form styling */
-    .contract-form {
-      margin-top: 40px;
+    .container {
+      width: 80%;
+      margin: 30px auto;
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     }
-    .contract-form input, .contract-form select, .contract-form button {
-      padding: 12px;
-      border-radius: 6px;
-      border: none;
-      font-size: 1em;
+
+    h2 {
+      color: #0066ff;
+      font-size: 2em;
+      margin-bottom: 20px;
+    }
+
+    ul {
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+
+    .requirements ul li {
       margin-bottom: 10px;
     }
-    .contract-form input, .contract-form select {
-      width: 100%;
+
+    .contract-types {
+      margin-bottom: 30px;
     }
-    .contract-form button {
+
+    .contract-types select {
+      padding: 10px;
+      font-size: 1.2em;
+      margin-top: 10px;
       width: 100%;
-      background: #0066ff;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+    }
+
+    .contract-types label {
+      font-size: 1.5em;
+    }
+
+    .payment-button {
+      margin-top: 20px;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 50px;
+      padding: 10px;
+      background-color: #0066ff;
       color: white;
-      cursor: pointer;
-      transition: background 0.3s;
+      font-size: 0.9em;
     }
-    .contract-form button:hover {
-      background: #004d99;
-    }
-
-    /* Success & Error Messages */
-    .success-message, .error-message {
-      display: none;
-      font-weight: bold;
-    }
-    .success-message {
-      color: green;
-    }
-    .error-message {
-      color: red;
-    }
-
   </style>
 </head>
 <body>
 
-  <!-- Hero Section -->
+  <!-- Header Section -->
   <header>
-    <video autoplay muted loop>
-      <source src="homepage-hero-animation.mp4" type="video/mp4">
-      Your browser does not support the video tag.
-    </video>
-    <img src="Three-Clerks-Logo.png" alt="Three Clerks Logo" class="logo">
+    <h1>Smart Contract Creation Service</h1>
+    <p>Efficient, Automated Blockchain Solutions for Your Business</p>
   </header>
 
-  <div class="hero-text">
-    <h1>Smart Contracts for Legal & Business Transactions</h1>
-    <p>Automate and securely execute your legal agreements with blockchain technology.</p>
-    <a href="#contract">Create a Smart Contract</a>
-  </div>
-
-  <!-- Main Content -->
+  <!-- Main Content Section -->
   <div class="container">
-    <h2 id="contract">Create Your Smart Contract</h2>
-    <p style="color:#bbb;">
-      A **smart contract** is a self-executing contract where the terms of the agreement are directly written into code. Think of it like a robot that follows instructions without needing a middleman. Once the contract conditions are met, it automatically performs the action, such as transferring money or verifying a task.
-    </p>
+    <h2>What is a Smart Contract?</h2>
+    <p>A <strong>smart contract</strong> is a self-executing agreement where the terms are written into code and executed automatically when certain conditions are met. It's like a digital agreement that runs without needing a middleman or lawyer to enforce it. Smart contracts are deployed on a blockchain network such as Ethereum or Polygon.</p>
 
-    <p style="color:#bbb;">
-      Here are the options based on complexity and pricing:
-    </p>
+    <h2>How Does It Work?</h2>
+    <ul>
+      <li><strong>1. Create the contract:</strong> You define the terms and conditions of the contract (e.g., when to transfer funds, trigger a payment, etc.).</li>
+      <li><strong>2. Deploy the contract:</strong> We deploy the contract to a blockchain like Ethereum or Polygon for automation.</li>
+      <li><strong>3. Execute Automatically:</strong> Once the conditions are met, the smart contract executes actions automatically (like transferring funds, sending tokens, etc.).</li>
+    </ul>
 
-    <!-- Contract Selection & Pricing -->
-    <div class="contract-form">
-      <label for="contractType">Select Contract Type:</label>
-      <select id="contractType" required>
-        <option value="basic">Basic Contract - $50</option>
-        <option value="standard">Standard Contract - $150</option>
-        <option value="complex">Complex Contract - $300</option>
+    <h2>What Do You Need to Use Smart Contracts?</h2>
+    <div class="requirements">
+      <p>To use smart contracts, you'll need the following:</p>
+      <ul>
+        <li><strong>A Blockchain Wallet</strong>: Both parties need a wallet like <a href="https://metamask.io/" target="_blank">MetaMask</a> or <a href="https://trustwallet.com/" target="_blank">Trust Wallet</a>.</li>
+        <li><strong>Ethereum or Polygon for Gas Fees</strong>: You'll need cryptocurrency (ETH for Ethereum or MATIC for Polygon) to pay transaction fees for deploying and interacting with the contract.</li>
+        <li><strong>Contract Terms</strong>: Define what you want the contract to do—e.g., trigger a payment when certain conditions are met, transfer tokens, etc.</li>
+        <li><strong>Internet Connection</strong>: A stable connection to interact with the blockchain network.</li>
+      </ul>
+    </div>
+
+    <h2>Select Your Contract Type</h2>
+    <div class="contract-types">
+      <label for="contract-type">Choose the complexity of your contract:</label>
+      <select id="contract-type" name="contract-type">
+        <option value="basic" data-price="50">Basic Contract - $50</option>
+        <option value="standard" data-price="150">Standard Contract - $150</option>
+        <option value="complex" data-price="300">Complex Contract - $300</option>
       </select>
-
-      <label for="contractName">Contract Name (e.g., NDA, Payment Agreement):</label>
-      <input type="text" id="contractName" placeholder="Enter contract name" required>
-
-      <label for="contractDetails">Contract Details:</label>
-      <textarea id="contractDetails" placeholder="Enter contract details here..." rows="4" required></textarea>
-
-      <!-- Payment Button -->
-      <button id="payButton">Pay and Create Contract</button>
     </div>
 
-    <!-- Success/Error Messages -->
-    <div class="success-message" id="success-message">
-      <p>Your contract has been successfully created on the blockchain!</p>
-    </div>
-    <div class="error-message" id="error-message">
-      <p>Something went wrong. Please try again later.</p>
+    <div class="payment-button">
+      <button id="pay-now" style="padding: 15px 30px; background-color: #0066ff; color: white; font-size: 1.2em; border: none; border-radius: 8px; cursor: pointer;">
+        Pay and Create Your Smart Contract
+      </button>
     </div>
   </div>
 
-  <!-- Footer -->
-  <footer style="text-align:center; margin-top:50px; font-size:0.9em; color:#888;">
-    <p>
-      © 2026 Three Clerks, Inc. ·
-      <a href="#services">Services</a> ·
-      <a href="/digital-infrastructure.html">Digital Infrastructure</a> ·
-      <a href="privacy-policy.html">Privacy Policy</a>
-    </p>
+  <!-- Footer Section -->
+  <footer>
+    <p>© 2026 Three Clerks, Inc. · <a href="#services" style="color: white;">Services</a> · <a href="privacy-policy.html" style="color: white;">Privacy Policy</a></p>
   </footer>
 
+  <!-- JavaScript for Stripe Payment Integration -->
+  <script src="https://js.stripe.com/v3/"></script>
   <script>
-    $(document).ready(function() {
-      // Set up Stripe
-      const stripe = Stripe('your-publishable-key-here');  // Replace with your Stripe public key
-      const checkoutButton = document.getElementById('payButton');
+    const stripe = Stripe('YOUR_STRIPE_PUBLIC_KEY'); // Replace with your actual Stripe public key
 
-      // Handle payment
-      checkoutButton.addEventListener('click', async () => {
-        const contractName = $('#contractName').val();
-        const contractDetails = $('#contractDetails').val();
-        const contractType = $('#contractType').val();
-        let amount = 0;
+    document.getElementById('pay-now').addEventListener('click', async () => {
+      const contractType = document.getElementById('contract-type').value;
+      const amount = document.querySelector(`#contract-type option[value="${contractType}"]`).dataset.price;
 
-        if (!contractName || !contractDetails) {
-          alert('Please fill in all the fields.');
-          return;
-        }
-
-        // Determine the price based on contract type
-        if (contractType === "basic") {
-          amount = 5000;  // $50
-        } else if (contractType === "standard") {
-          amount = 15000;  // $150
-        } else if (contractType === "complex") {
-          amount = 30000;  // $300
-        }
-
-        // Call your backend to create a payment session
-        const response = await fetch('/create-checkout-session', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({
-            contractName: contractName,
-            contractDetails: contractDetails,
-            contractType: contractType,
-            amount: amount
-          }),
-        });
-
-        const session = await response.json();
-
-        // Redirect to Stripe checkout page
-        stripe.redirectToCheckout({ sessionId: session.id }).then(function (result) {
-          if (result.error) {
-            alert(result.error.message);
-          }
-        });
+      // Call backend to create Stripe Checkout session (replace with your server URL and endpoint)
+      const response = await fetch('/create-checkout-session', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          amount: amount,
+          contractType: contractType
+        }),
       });
+
+      const session = await response.json();
+
+      // Redirect to Stripe Checkout
+      const result = await stripe.redirectToCheckout({ sessionId: session.id });
+      if (result.error) {
+        alert(result.error.message);
+      }
     });
   </script>
 
