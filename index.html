@@ -1,17 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <link rel="icon" href="/icons8-cloud-link-windows-11-color-32.png" type="image/png">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Web design checklist for solo practitioners and boutique law firms.">
+  <meta name="description" content="Three Clerks offers professional legal, writing, and creative services, including AI solutions, to businesses and individuals. Get a free consultation today.">
+  <meta name="keywords" content="legal services, writing services, AI consulting, creative solutions, business consulting, legal research, chatbots, video editing">
   <meta name="author" content="Three Clerks">
-  <title>Web Design Checklist for Solo Practitioners & Boutique Law Firms | Three Clerks</title>
+  <title>Three Clerks | Efficient Legal & Litigation Support, Tailored to Your Practice.</title>
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Merriweather&display=swap" rel="stylesheet">
 
   <!-- Favicon -->
-  <link rel="icon" href="Three-Clerks-Logo.png" type="image/png">
+  <link rel="icon" href="icons8-cloud-link-windows-11-color-32.png" type="image/png">
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> <!-- Add jQuery -->
 
   <style>
     body {
@@ -22,309 +26,367 @@
       color: #f1f1f1;
     }
 
-    .skip-link {
-      position: absolute;
-      left: -9999px;
-      top: auto;
-      width: 1px;
-      height: 1px;
+    /* Hero Section */
+    header {
+      position: relative;
+      height: 300px;
+      width: 100%;
       overflow: hidden;
     }
-
-    .skip-link:focus {
-      position: static;
-      width: auto;
-      height: auto;
-      margin: 10px;
-      padding: 8px 12px;
-      background: #0066ff;
-      color: #ffffff;
-      text-decoration: none;
-      border-radius: 4px;
-      z-index: 1000;
+    header video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -1;
     }
-
-    header {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 20px;
-      border-bottom: 1px solid #2a2a2a;
-    }
-
     .logo {
-      width: 180px;
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      width: 200px;
+    }
+    .hero-text {
+      background-color: #121212;
+      padding: 40px;
+      text-align: center;
+      color: white;
+    }
+    .hero-text h1 {
+      font-size: 2.5em;
+      margin: 0;
+      text-transform: uppercase;
+      font-family: 'Merriweather', serif;
+    }
+    .hero-text p {
+      font-size: 1.2em;
+      margin: 20px 0;
+    }
+    .hero-text a {
+      background: #0066ff;
+      color: white;
+      padding: 12px 24px;
+      text-decoration: none;
+      font-size: 1.2em;
+      border-radius: 6px;
+      transition: background 0.3s;
+    }
+    .hero-text a:hover {
+      background: #004d99;
     }
 
-    main {
-      display: block;
-      padding: 40px 0;
-    }
-
+    /* Main Content */
     .container {
       max-width: 900px;
-      margin: 40px auto;
+      margin: 30px auto;
       background: #1d1d1d;
       padding: 40px;
       border-radius: 12px;
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
     }
-
-    h1 {
-      font-family: 'Merriweather', serif;
-      font-size: 2.6em;
-      margin-bottom: 20px;
-      color: #ffffff;
-      text-align: center;
-    }
-
     h2 {
-      font-size: 2em;
-      margin-top: 50px;
-      margin-bottom: 16px;
+      font-size: 2.5em;
+      margin-bottom: 20px;
       color: #0066ff;
     }
 
-    p {
-      color: #bbb;
-      line-height: 1.7;
-      margin-bottom: 20px;
+    /* Image rows */
+  .image-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 16px;
+  margin: 40px 0;
+}
+
+.image-row img {
+  width: 100%;
+  height: 180px;           /* THIS is the key */
+  object-fit: cover;       /* Prevents squishing */
+  border-radius: 6px;
     }
 
-    ul {
-      margin-left: 20px;
-      color: #bbb;
-      line-height: 1.7;
+    .services {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
     }
-
-    li {
-      margin-bottom: 10px;
+    .services div {
+      padding: 20px;
+      background: #2a2a2a;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     }
-
-    .highlight {
-      color: #ffffff;
-      font-weight: 500;
+    .services h3 {
+      color: #0066ff;
+      font-size: 1.6em;
     }
-
-    .infrastructure-image {
-      margin: 40px 0;
-      text-align: center;
-    }
-
-    .infrastructure-image img {
-      max-width: 100%;
-      width: 100%;
-      max-width: 600px;
-      height: auto;
-      border-radius: 6px;
-    }
-
-    .checkbox-label {
-      display: inline-flex;
-      align-items: center;
+    .services p {
       color: #bbb;
     }
 
-    .checkbox-label input {
-      margin-right: 10px;
-      width: 20px;
-      height: 20px;
-    }
-
+    /* Footer */
     footer {
       text-align: center;
-      margin: 60px 0 40px;
+      margin-top: 50px;
       font-size: 0.9em;
       color: #888;
     }
-
     footer a {
       color: #0066ff;
       text-decoration: none;
     }
-
     footer a:hover {
       text-decoration: underline;
     }
+
+    /* Subscription Form */
+    .contact-form {
+      display: flex;
+      justify-content: center;
+      margin-top: 40px;
+    }
+    .contact-form input {
+      padding: 12px;
+      border-radius: 6px;
+      border: none;
+      font-size: 1em;
+      width: 300px;
+      margin-right: 10px;
+    }
+    .contact-form button {
+      padding: 12px 20px;
+      background: #0066ff;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 1em;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    .contact-form button:hover {
+      background: #004d99;
+    }
+
+    @media (max-width: 768px) {
+      .image-row img {
+        width: 100%;
+      }
+      .services {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Success & Error Messages */
+    .success-message {
+      display: none;
+      color: green;
+      font-weight: bold;
+    }
+    .error-message {
+      display: none;
+      color: red;
+      font-weight: bold;
+    }
+.jurisdiction-block {
+  margin: 40px 0;
+  padding: 20px;
+  background: #181818;
+  border-left: 4px solid #0066ff;
+  border-radius: 6px;
+}
+
+.jurisdiction-block h3 {
+  margin: 0 0 8px;
+  font-size: 1.4em;
+  color: #ffffff;
+  font-family: 'Merriweather', serif;
+}
+
+.jurisdictions {
+  color: #bbb;
+  letter-spacing: 0.05em;
+  font-size: 0.95em;
+}
   </style>
 </head>
-
 <body>
 
-  <!-- Skip to Content -->
-  <a href="#main-content" class="skip-link">Skip to main content</a>
-
-  <!-- Header / Logo -->
+  <!-- Hero Section -->
   <header>
-    <a href="/">
-      <img src="Three-Clerks-Logo.png" alt="Three Clerks Logo" class="logo">
-    </a>
+    <video autoplay muted loop>
+      <source src="homepage-hero-animation.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <img src="Three-Clerks-Logo.png" alt="Three Clerks Logo" class="logo">
   </header>
 
+  <div class="hero-text">
+    <h1>From Legal & Litigation Support to Creative Innovation—We Make It Simple.</h1>
+    <p>Efficient Legal & Litigation Support, Tailored to Your Practice.</p>
+    <a href="#services">Explore Our Services</a>
+  </div>
+
+  <!-- Images Above the Legal Services Section -->
+  <div class="image-row">
+    <img src="binding-contract-948442_1280.jpg" alt="Binding Contract">
+    <img src="giammarco-boscaro-zeH-ljawHtg-unsplash.jpg" alt="Contract Signing">
+    <img src="engin-akyurt-A9_IsUtjHm4-unsplash.jpg" alt="Legal Services">
+  </div>
+
   <!-- Main Content -->
-  <main>
-    <div class="container" id="main-content">
+  <div class="container">
 
-      <h1>Web Design Checklist for Solo Practitioners & Boutique Law Firms</h1>
-
-      <!-- Section 1 -->
-      <div class="infrastructure-image">
-        <img src="Three-Clerks-Man-Using-Typewriter-and-Laptop.avif" alt="Man using typewriter and laptop">
-      </div>
-      <h2>1. Define Your Website’s Purpose</h2>
-      <ul>
-        <li class="checkbox-label"><input type="checkbox"> Set clear objectives: What do you want your website to achieve? (e.g., lead generation, consultations, case information, etc.)</li>
-        <li class="checkbox-label"><input type="checkbox"> Identify target audience: Who are you focusing on (e.g., individuals needing legal help, small business owners)?</li>
-        <li class="checkbox-label"><input type="checkbox"> Decide on your brand personality: What kind of professional image do you want to project (approachable, authoritative, innovative)?</li>
-      </ul>
-
-      <!-- Section 2 -->
-      <div class="infrastructure-image">
-        <img src="markus-winkler-Vagh0KcwvwQ-unsplash.jpg" alt="Branding concept">
-      </div>
-      <h2>2. Choose a Simple & Memorable Domain Name</h2>
-      <ul>
-        <li class="checkbox-label"><input type="checkbox"> Pick a short, memorable domain: E.g., YourNameLaw.com or CityLawyer.com</li>
-        <li class="checkbox-label"><input type="checkbox"> Consider a location-based domain: E.g., “DallasDivorceAttorney.com” if focusing on a specific region.</li>
-        <li class="checkbox-label"><input type="checkbox"> Avoid numbers and hyphens: Choose a clean, easy-to-remember name.</li>
-      </ul>
-
-      <!-- Section 3 -->
-      <div class="infrastructure-image">
-        <img src="neil-soni-6wdRuK7bVTE-unsplash.jpg" alt="Mobile-friendly website">
-      </div>
-      <h2>3. Mobile-Friendly & Easy Navigation</h2>
-      <ul>
-        <li class="checkbox-label"><input type="checkbox"> Ensure mobile optimization: Does your website adjust seamlessly to mobile and tablet screens?</li>
-        <li class="checkbox-label"><input type="checkbox"> Keep navigation simple: Limit your menu to essential pages (e.g., Home, About, Practice Areas, Testimonials, Contact).</li>
-        <li class="checkbox-label"><input type="checkbox"> Use visible CTAs: Ensure calls-to-action like “Request a Consultation” or “Contact Us” are visible on all pages.</li>
-      </ul>
-
-      <!-- Section 4 -->
-      <div class="infrastructure-image">
-        <img src="jaime-nugent-Qtc-iQt8J_M-unsplash.jpg" alt="Logo Design and Branding">
-      </div>
-      <h2>4. Personalize Your Branding</h2>
-      <ul>
-        <li class="checkbox-label"><input type="checkbox"> Create a professional logo: Is your logo clear and professional, reflecting your practice's values?</li>
-        <li class="checkbox-label"><input type="checkbox"> Choose a consistent color palette: Stick to 2-3 colors that align with the legal profession (e.g., navy, dark gray, white).</li>
-      </ul>
-
-      <!-- Section 5 -->
-      <div class="infrastructure-image">
-        <img src="appeals-opener.jpg" alt="Legal Services">
-      </div>
-      <h2>5. Highlight Your Services Clearly</h2>
-      <ul>
-        <li class="checkbox-label"><input type="checkbox"> List your practice areas: Provide clear and concise descriptions of the services you offer.</li>
-        <li class="checkbox-label"><input type="checkbox"> Simplify service descriptions: Keep each description short and client-friendly, avoiding legal jargon.</li>
-        <li class="checkbox-label"><input type="checkbox"> Focus on your top areas: Showcase the specific legal services you excel at, especially if they differentiate your firm.</li>
-      </ul>
-
-      <!-- Section 6 -->
-      <div class="infrastructure-image">
-        <img src="markus-winkler-GTJNxRG4QJw-unsplash.jpg" alt="Client Communication">
-      </div>
-      <h2>6. Make Contacting You Easy</h2>
-      <ul>
-        <li class="checkbox-label"><input type="checkbox"> Include a contact form: Ensure the form is simple and easy to fill out (name, email, message).</li>
-        <li class="checkbox-label"><input type="checkbox"> List contact information clearly: Make sure your contact details are easy to find on every page (header/footer).</li>
-        <li class="checkbox-label"><input type="checkbox"> Integrate appointment scheduling: Use tools like Calendly or a similar scheduling service for clients to book consultations directly.</li>
-      </ul>
-
-      <!-- Section 7 -->
-      <div class="infrastructure-image">
-        <img src="cytonn-photography-n95VMLxqM2I-unsplash.jpg" alt="Trust and Credibility">
-      </div>
-      <h2>7. Build Trust</h2>
-      <ul>
-        <li class="checkbox-label"><input type="checkbox"> Showcase your expertise: Highlight your specific knowledge and skills in web design for law firms.</li>
-        <li class="checkbox-label"><input type="checkbox"> Feature professional affiliations: Display badges or certifications that demonstrate your credibility.</li>
-        <li class="checkbox-label"><input type="checkbox"> Provide clear service guarantees: If applicable, offer a clear guarantee about the quality or delivery of your services.</li>
-      </ul>
-
-      <!-- Section 8 -->
-      <div class="infrastructure-image">
-        <img src="andrew-neel-cckf4TsHAuw-unsplash.jpg" alt="Client Engagement">
-      </div>
-      <h2>8. Content That Speaks to Clients</h2>
-      <ul>
-        <li class="checkbox-label"><input type="checkbox"> Write an engaging About You page: Share your story, your motivation to practice law or start your business, and what drives you to help clients.</li>
-        <li class="checkbox-label"><input type="checkbox"> Add an FAQ section: Answer common questions clients have about your services, costs, and the legal process.</li>
-        <li class="checkbox-label"><input type="checkbox"> Start a blog: Post regular updates or legal advice relevant to your practice areas. Keep it short and informative.</li>
-      </ul>
-
-      <!-- Section 9 -->
-      <div class="infrastructure-image">
-        <img src="merakist-l5if0iQfV4c-unsplash.jpg" alt="Local SEO">
-      </div>
-      <h2>9. Optimize for Local Search (Local SEO)</h2>
-      <ul>
-        <li class="checkbox-label"><input type="checkbox"> Claim and optimize your Google My Business profile.</li>
-        <li class="checkbox-label"><input type="checkbox"> Use local keywords: Incorporate keywords like “best divorce lawyer in [City]” throughout your website.</li>
-        <li class="checkbox-label"><input type="checkbox"> Ensure NAP consistency: Verify your Name, Address, and Phone number are consistent across all online directories (Yelp, Avvo, etc.).</li>
-      </ul>
-
-      <!-- Section 10 -->
-      <h2>10. Basic SEO to Get Found</h2>
-      <ul>
-        <li class="checkbox-label"><input type="checkbox"> Optimize on-page SEO: Include keywords in your page titles, headers, and meta descriptions.</li>
-        <li class="checkbox-label"><input type="checkbox"> Optimize images: Compress images for faster loading times and use alt text with relevant keywords.</li>
-        <li class="checkbox-label"><input type="checkbox"> Set up Google Analytics: Track visitor behavior and website performance.</li>
-      </ul>
-
-      <!-- Section 11 -->
-      <div class="infrastructure-image">
-        <img src="markus-winkler-nxYYBLAUN7Y-unsplash.jpg" alt="Security Measures">
-      </div>
-      <h2>11. Ensure Your Website is Secure</h2>
-      <ul>
-        <li class="checkbox-label"><input type="checkbox"> Install an SSL certificate: Ensure your site is secure with HTTPS to protect client information.</li>
-        <li class="checkbox-label"><input type="checkbox"> Create a privacy policy: If you're collecting personal information, include a basic privacy policy.</li>
-        <li class="checkbox-label"><input type="checkbox"> Backup & update regularly: Set up automatic website backups and ensure plugins/software are up-to-date.</li>
-      </ul>
-
-      <!-- Section 12 -->
-      <h2>12. Keep It Fast & Simple</h2>
-      <ul>
-        <li class="checkbox-label"><input type="checkbox"> Test website speed: Use tools like Google PageSpeed Insights to make sure your site loads quickly.</li>
-        <li class="checkbox-label"><input type="checkbox"> Use a minimalist design: Keep your layout clean and user-friendly, with minimal distractions.</li>
-        <li class="checkbox-label"><input type="checkbox"> Optimize site for user experience: Ensure the site is easy to navigate, with a clear structure and readable fonts.</li>
-      </ul>
-
-      <!-- Section 13 -->
-      <h2>13. Ongoing Maintenance & Updates</h2>
-      <ul>
-        <li class="checkbox-label"><input type="checkbox"> Update website content regularly: Keep your services, blog posts, and testimonials up to date.</li>
-        <li class="checkbox-label"><input type="checkbox"> Monitor website performance: Use Google Analytics to track what’s working and where improvements can be made.</li>
-        <li class="checkbox-label"><input type="checkbox"> Review and refresh SEO: Regularly revisit your SEO strategy to ensure your site remains optimized.</li>
-      </ul>
-
-      <!-- Section 14 -->
-      <h2>Contact Three Clerks, Inc. for a Customized Web Design Experience</h2>
-      <p>Ready to create a website that works for your solo practice or boutique law firm? Three Clerks, Inc. specializes in crafting user-friendly, SEO-optimized, and mobile-responsive websites tailored to the legal industry. Get in touch today for a free consultation and see how we can help elevate your practice online.</p>
-
-      <!-- Print/Download Section -->
-      <div class="cta-block">
-        <p class="cta-text">
-          Want to keep this checklist for reference? You can download it or print it for future use.
-        </p>
-        <p class="cta-link">
-          <a href="#" id="download-pdf">Download as PDF</a> | <a href="javascript:window.print()">Print this Checklist</a>
-        </p>
-      </div>
-
-    </div>
-  </main>
-
-  <!-- Footer -->
-  <footer role="contentinfo">
-    <p>
-      © 2026 Three Clerks, Inc. ·
-      <a href="/#services">Services</a> ·
-      <a href="privacy-policy.html">Privacy Policy</a>
+    <!-- Remote Services + Global Reach -->
+    <h2>Global Reach, Local Expertise</h2>
+<div class="jurisdiction-block">
+  <h3>Multi-Jurisdictional Experience</h3>
+  <p class="jurisdictions">
+    District of Columbia • Virginia • Maryland • California • Hawaii • Florida • Nevada • Washington
+  </p>
+</div>
+    <p style="color:#bbb; max-width:900px;">
+      Three Clerks provides remote litigation and legal support services to attorneys and firms across the United States and internationally. Our work is performed entirely remotely, allowing us to support matters efficiently regardless of location. We routinely support counsel handling multi-jurisdictional and cross-border matters. 
     </p>
-  </footer>
+
+    <!-- Legal & Litigation Support Section -->
+    <h2 id="services">Legal & Litigation Support</h2>
+    <p>
+      At Three Clerks, we specialize in providing expert non-attorney legal and litigation support services tailored to the unique needs of boutique law firms and solo practitioners. Legal professionals need not just expertise—but efficient operational support to maintain a competitive edge in an ever-evolving landscape.
+    </p>
+    <p>
+      Our team acts as an extension of your practice, offering strategic solutions designed to help optimize workflows and achieve better outcomes for your clients. From comprehensive case research to meticulous courtroom preparation, we handle the critical support tasks so you can focus on high-level strategy.
+    </p>
+    <p>
+      Additionally, our trademark administration services protect your clients’ intellectual property, providing everything from clearance to filings and portfolio management. You can trust we’ll handle all details efficiently and professionally.
+    </p>
+
+   <ul>
+  <li>
+    <strong style="color:#0066ff;">
+      Comprehensive Legal Research &amp; Case Analysis
+    </strong>
+    – In-depth, actionable research that informs strategy and strengthens arguments.
+  </li>
+
+  <li>
+    <strong style="color:#0066ff;">
+      Pleadings, Motions, Discovery &amp; Document Drafting
+    </strong>
+    – Precise, legally sound drafting customized for your needs.
+  </li>
+
+  <li>
+    <strong style="color:#0066ff;">
+      Trial &amp; Hearing Preparation
+    </strong>
+    – Coordination of exhibits, witness prep, strategy support, PowerPoint presentations, and readiness tracking.
+  </li>
+
+  <li>
+    <strong style="color:#0066ff;">
+      Trademark Clearance, Filings &amp; Portfolio Management
+    </strong>
+    – Thorough clearance, filings, and ongoing IP portfolio services.
+  </li>
+</ul>
+    <p>With a focus on accuracy, efficiency, and seamless integration into your practice, we provide the support needed to improve client outcomes and increase profitability. Let us handle operational details, so you can focus on exceptional legal counsel. <p>
+  In appropriate matters, this work may also include <a href="/digital-infrastructure.html"> digital infrastructure and web services</a> that support client-facing systems and professional workflows.
+</p></p>
+
+    <h2>Areas of Expertise</h2>
+
+<p>At Three Clerks, we provide comprehensive litigation support across a wide range of legal sectors. Our team has significant experience assisting attorneys and firms in handling complex cases in the following areas:</p>
+
+<ul>
+  <li><strong style="color:#0066ff;">Employment Law</strong>: From discrimination claims to wage disputes, we support all aspects of employment litigation.</li>
+  <li><strong style="color:#0066ff;">Aviation Law</strong>: Expert research and support for aviation-related legal matters, including regulatory compliance and liability cases.</li>
+  <li><strong style="color:#0066ff;">Redistricting</strong>: Assisting legal teams with intricate redistricting issues, ensuring compliance with federal and state regulations.</li>
+  <li><strong style="color:#0066ff;">Complex Receiverships</strong>: Handling the detailed and multifaceted aspects of receivership cases, including asset management and distribution.</li>
+  <li><strong style="color:#0066ff;">Contract Law</strong>: Providing assistance with breach of contract, interpretation issues, and enforcement actions across multiple industries.</li>
+  <li><strong style="color:#0066ff;">Family Law</strong>: Comprehensive support for family law matters, including divorce, child custody, and property division.</li>
+  <li><strong style="color:#0066ff;">Intellectual Property</strong>: Protecting and enforcing your clients' intellectual property rights, including patents, trademarks, copyrights, and trade secrets.</li>
+</ul>
+
+<p>Whether you’re dealing with multi-faceted litigation or need support with specialized legal research, our team is equipped to provide the expert assistance you need.</p>
+    <!-- Images Above Remote Services Section -->
+    <div class="image-row">
+      <img src="guzman-barquin-C9XgrB8hqBI-unsplash.jpg" alt="Remote legal work">
+      <img src="little-plant-RMXIn292QSs-unsplash.jpg" alt="Aloha remote services">
+      <img src="maarten-van-den-heuvel-gZXx8lKAb7Y-unsplash.jpg" alt="Distributed support">
+      <img src="tim-woody-Ca6_UQ0HxUM-unsplash.jpg" alt="Modern workflow">
+    </div>
+
+    <!-- Contact Form -->
+    <h2 id="contact" style="margin-top:60px;">Contact Us</h2>
+    <p style="color:#bbb; max-width:700px;">
+      If you have a specific challenge or project in mind, tell us a bit about it. We review inquiries carefully and respond promptly.
+    </p>
+
+  <form id="contact-form" action="https://formspree.io/f/mnjbbkgz" method="POST">
+  <input type="text" name="name" placeholder="Your name" style="width:100%; padding:12px; margin-bottom:12px; border-radius:6px; border:none;" required>
+  <input type="email" name="email" placeholder="Your email address" style="width:100%; padding:12px; margin-bottom:12px; border-radius:6px; border:none;" required>
+  <textarea name="message" placeholder="Briefly describe your needs or challenges" rows="5" style="width:100%; padding:12px; margin-bottom:12px; border-radius:6px; border:none;" required></textarea>
+  <button type="submit" style="background:#0066ff; color:white; padding:12px 24px; border:none; border-radius:6px; font-size:1em; cursor:pointer;">
+    Submit Inquiry
+  </button>
+</form>
+
+    <!-- Success Message -->
+    <div class="success-message" id="success-message">
+      <p>Thank you for reaching out! Your message has been sent successfully.</p>
+    </div>
+
+    <!-- Error Message -->
+    <div class="error-message" id="error-message">
+      <p>Oops! Something went wrong. Please try again.</p>
+    </div>
+
+    <!-- Footer -->
+ 
+<footer style="text-align:center; margin-top:50px; font-size:0.9em; color:#888;">
+  <p>
+    © 2026 Three Clerks, Inc. ·
+    <a href="#services">Services</a> ·
+    <a href="/digital-infrastructure.html">Digital Infrastructure</a> ·
+    <a href="privacy-policy.html">Privacy Policy</a>
+  </p>
+</footer>
+  </div>
+  <script>
+    $(document).ready(function(){
+      // Prevent form submission to Formspree by default
+      $("#contact-form").submit(function(e){
+        e.preventDefault();
+
+        // Hide previous messages
+        $('#error-message').hide();
+        $('#success-message').hide();
+
+        // Serialize the form data
+        var formData = $(this).serialize();
+
+        // Submit form using AJAX
+        $.ajax({
+          url: $(this).attr('action'),
+          method: 'POST',
+          data: formData,
+          dataType: 'json',
+          success: function(response) {
+            // Show success message
+            $('#success-message').show();
+            // Reset the form
+            $('#contact-form')[0].reset();
+          },
+          error: function() {
+            // Show error message
+            $('#error-message').show();
+          }
+        });
+      });
+    });
+  </script>
 
 </body>
 </html>
