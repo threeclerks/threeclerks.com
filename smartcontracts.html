@@ -17,6 +17,7 @@
 
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/web3/1.2.9/web3.min.js"></script> <!-- Web3.js for interacting with Ethereum -->
+  <script src="https://js.stripe.com/v3/"></script> <!-- Stripe JS -->
 
   <style>
     body {
@@ -97,14 +98,14 @@
     .contract-form {
       margin-top: 40px;
     }
-    .contract-form input, .contract-form button {
+    .contract-form input, .contract-form select, .contract-form button {
       padding: 12px;
       border-radius: 6px;
       border: none;
       font-size: 1em;
       margin-bottom: 10px;
     }
-    .contract-form input {
+    .contract-form input, .contract-form select {
       width: 100%;
     }
     .contract-form button {
@@ -145,20 +146,38 @@
 
   <div class="hero-text">
     <h1>Smart Contracts for Legal & Business Transactions</h1>
-    <p>Use blockchain technology to automate and securely execute your legal agreements.</p>
+    <p>Automate and securely execute your legal agreements with blockchain technology.</p>
     <a href="#contract">Create a Smart Contract</a>
   </div>
 
   <!-- Main Content -->
   <div class="container">
     <h2 id="contract">Create Your Smart Contract</h2>
-    <p style="color:#bbb;">Use blockchain technology to automatically execute legal agreements or business transactions. Simply fill in the contract details, and we'll deploy it to the Ethereum blockchain for secure, automated execution.</p>
+    <p style="color:#bbb;">
+      A **smart contract** is a self-executing contract where the terms of the agreement are directly written into code. Think of it like a robot that follows instructions without needing a middleman. Once the contract conditions are met, it automatically performs the action, such as transferring money or verifying a task.
+    </p>
 
-    <!-- Contract Form -->
+    <p style="color:#bbb;">
+      Here are the options based on complexity and pricing:
+    </p>
+
+    <!-- Contract Selection & Pricing -->
     <div class="contract-form">
-      <input type="text" id="contractName" placeholder="Contract Name (e.g., NDA)" required>
+      <label for="contractType">Select Contract Type:</label>
+      <select id="contractType" required>
+        <option value="basic">Basic Contract - $50</option>
+        <option value="standard">Standard Contract - $150</option>
+        <option value="complex">Complex Contract - $300</option>
+      </select>
+
+      <label for="contractName">Contract Name (e.g., NDA, Payment Agreement):</label>
+      <input type="text" id="contractName" placeholder="Enter contract name" required>
+
+      <label for="contractDetails">Contract Details:</label>
       <textarea id="contractDetails" placeholder="Enter contract details here..." rows="4" required></textarea>
-      <button id="createContractButton">Create Contract</button>
+
+      <!-- Payment Button -->
+      <button id="payButton">Pay and Create Contract</button>
     </div>
 
     <!-- Success/Error Messages -->
@@ -168,7 +187,6 @@
     <div class="error-message" id="error-message">
       <p>Something went wrong. Please try again later.</p>
     </div>
-
   </div>
 
   <!-- Footer -->
@@ -182,54 +200,55 @@
   </footer>
 
   <script>
-    $(document).ready(function(){
-      // Check if Web3 is available (MetaMask)
-      if (typeof window.ethereum !== 'undefined') {
-        console.log("MetaMask is installed!");
+    $(document).ready(function() {
+      // Set up Stripe
+      const stripe = Stripe('your-publishable-key-here');  // Replace with your Stripe public key
+      const checkoutButton = document.getElementById('payButton');
 
-        // Initialize Web3
-        const web3 = new Web3(window.ethereum);
+      // Handle payment
+      checkoutButton.addEventListener('click', async () => {
+        const contractName = $('#contractName').val();
+        const contractDetails = $('#contractDetails').val();
+        const contractType = $('#contractType').val();
+        let amount = 0;
 
-        // Request account access
-        window.ethereum.request({ method: 'eth_requestAccounts' }).then(accounts => {
-          console.log("Connected with account: ", accounts[0]);
-        }).catch(err => {
-          console.error("User denied account access", err);
+        if (!contractName || !contractDetails) {
+          alert('Please fill in all the fields.');
+          return;
+        }
+
+        // Determine the price based on contract type
+        if (contractType === "basic") {
+          amount = 5000;  // $50
+        } else if (contractType === "standard") {
+          amount = 15000;  // $150
+        } else if (contractType === "complex") {
+          amount = 30000;  // $300
+        }
+
+        // Call your backend to create a payment session
+        const response = await fetch('/create-checkout-session', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            contractName: contractName,
+            contractDetails: contractDetails,
+            contractType: contractType,
+            amount: amount
+          }),
         });
 
-        // Handle contract creation
-        $('#createContractButton').click(async function() {
-          const contractName = $('#contractName').val();
-          const contractDetails = $('#contractDetails').val();
-          
-          if (!contractName || !contractDetails) {
-            alert('Please fill in both fields.');
-            return;
-          }
+        const session = await response.json();
 
-          try {
-            // Create smart contract interaction here
-            const accounts = await web3.eth.getAccounts();
-            const contractAddress = '0xYourContractAddress'; // Replace with your smart contract's address
-            const contractABI = [/* Your contract ABI here */]; // Replace with your contract ABI
-
-            const contract = new web3.eth.Contract(contractABI, contractAddress);
-
-            // Call a function in your smart contract to store contract details (or execute action)
-            await contract.methods.createContract(contractName, contractDetails).send({ from: accounts[0] });
-
-            // Show success message
-            $('#success-message').show();
-            $('#error-message').hide();
-          } catch (error) {
-            console.error("Error creating contract: ", error);
-            $('#error-message').show();
-            $('#success-message').hide();
+        // Redirect to Stripe checkout page
+        stripe.redirectToCheckout({ sessionId: session.id }).then(function (result) {
+          if (result.error) {
+            alert(result.error.message);
           }
         });
-      } else {
-        alert('Please install MetaMask to interact with smart contracts.');
-      }
+      });
     });
   </script>
 
