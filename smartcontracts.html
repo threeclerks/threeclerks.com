@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" href="/icons8-cloud-link-windows-11-color-32.png" type="image/png">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Three Clerks offers professional legal, writing, and creative services, including AI solutions, to businesses and individuals. Get a free consultation today.">
+  <meta name="keywords" content="legal services, writing services, AI consulting, creative solutions, business consulting, legal research, chatbots, video editing">
+  <meta name="author" content="Three Clerks">
+  <title>Three Clerks | Efficient Legal & Litigation Support, Tailored to Your Practice.</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Merriweather&display=swap" rel="stylesheet">
+
+  <!-- Favicon -->
+  <link rel="icon" href="icons8-cloud-link-windows-11-color-32.png" type="image/png">
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/web3/1.2.9/web3.min.js"></script> <!-- Web3.js for interacting with Ethereum -->
+
+  <style>
+    body {
+      font-family: 'Montserrat', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #121212;
+      color: #f1f1f1;
+    }
+
+    /* Hero Section */
+    header {
+      position: relative;
+      height: 300px;
+      width: 100%;
+      overflow: hidden;
+    }
+    header video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -1;
+    }
+    .logo {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      width: 200px;
+    }
+    .hero-text {
+      background-color: #121212;
+      padding: 40px;
+      text-align: center;
+      color: white;
+    }
+    .hero-text h1 {
+      font-size: 2.5em;
+      margin: 0;
+      text-transform: uppercase;
+      font-family: 'Merriweather', serif;
+    }
+    .hero-text p {
+      font-size: 1.2em;
+      margin: 20px 0;
+    }
+    .hero-text a {
+      background: #0066ff;
+      color: white;
+      padding: 12px 24px;
+      text-decoration: none;
+      font-size: 1.2em;
+      border-radius: 6px;
+      transition: background 0.3s;
+    }
+    .hero-text a:hover {
+      background: #004d99;
+    }
+
+    /* Main Content */
+    .container {
+      max-width: 900px;
+      margin: 30px auto;
+      background: #1d1d1d;
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    }
+    h2 {
+      font-size: 2.5em;
+      margin-bottom: 20px;
+      color: #0066ff;
+    }
+
+    /* Form styling */
+    .contract-form {
+      margin-top: 40px;
+    }
+    .contract-form input, .contract-form button {
+      padding: 12px;
+      border-radius: 6px;
+      border: none;
+      font-size: 1em;
+      margin-bottom: 10px;
+    }
+    .contract-form input {
+      width: 100%;
+    }
+    .contract-form button {
+      width: 100%;
+      background: #0066ff;
+      color: white;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    .contract-form button:hover {
+      background: #004d99;
+    }
+
+    /* Success & Error Messages */
+    .success-message, .error-message {
+      display: none;
+      font-weight: bold;
+    }
+    .success-message {
+      color: green;
+    }
+    .error-message {
+      color: red;
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- Hero Section -->
+  <header>
+    <video autoplay muted loop>
+      <source src="homepage-hero-animation.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <img src="Three-Clerks-Logo.png" alt="Three Clerks Logo" class="logo">
+  </header>
+
+  <div class="hero-text">
+    <h1>Smart Contracts for Legal & Business Transactions</h1>
+    <p>Use blockchain technology to automate and securely execute your legal agreements.</p>
+    <a href="#contract">Create a Smart Contract</a>
+  </div>
+
+  <!-- Main Content -->
+  <div class="container">
+    <h2 id="contract">Create Your Smart Contract</h2>
+    <p style="color:#bbb;">Use blockchain technology to automatically execute legal agreements or business transactions. Simply fill in the contract details, and we'll deploy it to the Ethereum blockchain for secure, automated execution.</p>
+
+    <!-- Contract Form -->
+    <div class="contract-form">
+      <input type="text" id="contractName" placeholder="Contract Name (e.g., NDA)" required>
+      <textarea id="contractDetails" placeholder="Enter contract details here..." rows="4" required></textarea>
+      <button id="createContractButton">Create Contract</button>
+    </div>
+
+    <!-- Success/Error Messages -->
+    <div class="success-message" id="success-message">
+      <p>Your contract has been successfully created on the blockchain!</p>
+    </div>
+    <div class="error-message" id="error-message">
+      <p>Something went wrong. Please try again later.</p>
+    </div>
+
+  </div>
+
+  <!-- Footer -->
+  <footer style="text-align:center; margin-top:50px; font-size:0.9em; color:#888;">
+    <p>
+      © 2026 Three Clerks, Inc. ·
+      <a href="#services">Services</a> ·
+      <a href="/digital-infrastructure.html">Digital Infrastructure</a> ·
+      <a href="privacy-policy.html">Privacy Policy</a>
+    </p>
+  </footer>
+
+  <script>
+    $(document).ready(function(){
+      // Check if Web3 is available (MetaMask)
+      if (typeof window.ethereum !== 'undefined') {
+        console.log("MetaMask is installed!");
+
+        // Initialize Web3
+        const web3 = new Web3(window.ethereum);
+
+        // Request account access
+        window.ethereum.request({ method: 'eth_requestAccounts' }).then(accounts => {
+          console.log("Connected with account: ", accounts[0]);
+        }).catch(err => {
+          console.error("User denied account access", err);
+        });
+
+        // Handle contract creation
+        $('#createContractButton').click(async function() {
+          const contractName = $('#contractName').val();
+          const contractDetails = $('#contractDetails').val();
+          
+          if (!contractName || !contractDetails) {
+            alert('Please fill in both fields.');
+            return;
+          }
+
+          try {
+            // Create smart contract interaction here
+            const accounts = await web3.eth.getAccounts();
+            const contractAddress = '0xYourContractAddress'; // Replace with your smart contract's address
+            const contractABI = [/* Your contract ABI here */]; // Replace with your contract ABI
+
+            const contract = new web3.eth.Contract(contractABI, contractAddress);
+
+            // Call a function in your smart contract to store contract details (or execute action)
+            await contract.methods.createContract(contractName, contractDetails).send({ from: accounts[0] });
+
+            // Show success message
+            $('#success-message').show();
+            $('#error-message').hide();
+          } catch (error) {
+            console.error("Error creating contract: ", error);
+            $('#error-message').show();
+            $('#success-message').hide();
+          }
+        });
+      } else {
+        alert('Please install MetaMask to interact with smart contracts.');
+      }
+    });
+  </script>
+
+</body>
+</html>
