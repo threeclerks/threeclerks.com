@@ -3,328 +3,291 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Web design checklist for solo practitioners and boutique law firms.">
+  <meta name="description" content="Web Design and Development Services for Law Firms.">
   <meta name="author" content="Three Clerks">
   <title>Web Design Checklist for Solo Practitioners & Boutique Law Firms | Three Clerks</title>
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Merriweather&display=swap" rel="stylesheet">
-
   <!-- Favicon -->
-  <link rel="icon" href="Three-Clerks-Logo.png" type="image/png">
+  <link rel="icon" href="icons8-cloud-link-windows-11-color-32.png" type="image/png">
+
+  <!-- Include jsPDF Library -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 
   <style>
+    /* General Styles */
     body {
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'Arial', sans-serif;
       margin: 0;
       padding: 0;
-      background: #121212;
-      color: #f1f1f1;
-    }
-
-    .skip-link {
-      position: absolute;
-      left: -9999px;
-      top: auto;
-      width: 1px;
-      height: 1px;
-      overflow: hidden;
-    }
-
-    .skip-link:focus {
-      position: static;
-      width: auto;
-      height: auto;
-      margin: 10px;
-      padding: 8px 12px;
-      background: #0066ff;
-      color: #ffffff;
-      text-decoration: none;
-      border-radius: 4px;
-      z-index: 1000;
+      background-color: #f4f4f4;
+      color: #333;
     }
 
     header {
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      text-align: center;
       padding: 20px;
-      border-bottom: 1px solid #2a2a2a;
+      background-color: #0066ff;
+      color: white;
     }
 
-    .logo {
-      width: 180px;
+    header img {
+      max-width: 180px;
     }
 
     main {
-      display: block;
-      padding: 40px 0;
-    }
-
-    .container {
-      max-width: 900px;
-      margin: 40px auto;
-      background: #1d1d1d;
       padding: 40px;
-      border-radius: 12px;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      max-width: 900px;
+      margin: 0 auto;
+      background: #ffffff;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     }
 
-    h1 {
-      font-family: 'Merriweather', serif;
-      font-size: 2.6em;
-      margin-bottom: 20px;
-      color: #ffffff;
-      text-align: center;
-    }
-
-    h2 {
-      font-size: 2em;
-      margin-top: 50px;
-      margin-bottom: 16px;
+    h1, h2 {
       color: #0066ff;
     }
 
+    h2 {
+      margin-top: 40px;
+    }
+
     p {
-      color: #bbb;
-      line-height: 1.7;
-      margin-bottom: 20px;
+      font-size: 1.1em;
+      line-height: 1.6;
     }
 
     ul {
       margin-left: 20px;
-      color: #bbb;
-      line-height: 1.7;
+      list-style-type: square;
     }
 
-    li {
-      margin-bottom: 10px;
+    button {
+      display: block;
+      width: 200px;
+      margin: 40px auto;
+      padding: 10px 20px;
+      background-color: #0066ff;
+      color: white;
+      border: none;
+      font-size: 1.2em;
+      cursor: pointer;
+      border-radius: 5px;
     }
 
-    .highlight {
-      color: #ffffff;
-      font-weight: 500;
+    button:hover {
+      background-color: #0055cc;
     }
 
-    .infrastructure-image {
-      margin: 40px 0;
-      text-align: center;
+    /* Image Styling */
+    .image-row {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 20px;
     }
 
-    .infrastructure-image img {
+    .image-row img {
       max-width: 100%;
       width: 100%;
-      max-width: 600px;
       height: auto;
-      border-radius: 6px;
+      max-height: 400px; /* Adjust based on your design */
+      display: block;
+      margin: 0 auto;
     }
 
-    .checkbox-label {
-      display: inline-flex;
-      align-items: center;
-      color: #bbb;
-    }
-
-    .checkbox-label input {
+    .image-row img:nth-child(1) {
+      flex: 1;
       margin-right: 10px;
-      width: 20px;
-      height: 20px;
     }
 
-    footer {
-      text-align: center;
-      margin: 60px 0 40px;
-      font-size: 0.9em;
-      color: #888;
+    .image-row img:nth-child(2) {
+      flex: 1;
+      margin-right: 10px;
     }
 
-    footer a {
-      color: #0066ff;
-      text-decoration: none;
-    }
-
-    footer a:hover {
-      text-decoration: underline;
+    .image-row img:nth-child(3) {
+      flex: 1;
     }
   </style>
 </head>
-
 <body>
 
-  <!-- Skip to Content -->
-  <a href="#main-content" class="skip-link">Skip to main content</a>
-
-  <!-- Header / Logo -->
+  <!-- Header with Logo -->
   <header>
-    <a href="/">
-      <img src="Three-Clerks-Logo.png" alt="Three Clerks Logo" class="logo">
-    </a>
+    <img src="Three-Clerks-Logo.png" alt="Three Clerks Logo">
   </header>
 
   <!-- Main Content -->
   <main>
-    <div class="container" id="main-content">
 
-      <h1>Web Design Checklist for Solo Practitioners & Boutique Law Firms</h1>
+    <h1>Web Design Checklist for Solo Practitioners & Boutique Law Firms</h1>
+    <p>Welcome to the web design checklist that will guide you through building a professional, effective website for your law practice. Follow the steps below to create a website that is functional, user-friendly, and optimized for success.</p>
 
-      <!-- Section 1 -->
-      <div class="infrastructure-image">
-        <img src="Three-Clerks-Man-Using-Typewriter-and-Laptop.avif" alt="Man using typewriter and laptop">
-      </div>
-      <h2>1. Define Your Website’s Purpose</h2>
-      <ul>
-        <li class="checkbox-label"><input type="checkbox"> Set clear objectives: What do you want your website to achieve? (e.g., lead generation, consultations, case information, etc.)</li>
-        <li class="checkbox-label"><input type="checkbox"> Identify target audience: Who are you focusing on (e.g., individuals needing legal help, small business owners)?</li>
-        <li class="checkbox-label"><input type="checkbox"> Decide on your brand personality: What kind of professional image do you want to project (approachable, authoritative, innovative)?</li>
-      </ul>
-
-      <!-- Section 2 -->
-      <div class="infrastructure-image">
-        <img src="markus-winkler-Vagh0KcwvwQ-unsplash.jpg" alt="Branding concept">
-      </div>
-      <h2>2. Choose a Simple & Memorable Domain Name</h2>
-      <ul>
-        <li class="checkbox-label"><input type="checkbox"> Pick a short, memorable domain: E.g., YourNameLaw.com or CityLawyer.com</li>
-        <li class="checkbox-label"><input type="checkbox"> Consider a location-based domain: E.g., “DallasDivorceAttorney.com” if focusing on a specific region.</li>
-        <li class="checkbox-label"><input type="checkbox"> Avoid numbers and hyphens: Choose a clean, easy-to-remember name.</li>
-      </ul>
-
-      <!-- Section 3 -->
-      <div class="infrastructure-image">
-        <img src="neil-soni-6wdRuK7bVTE-unsplash.jpg" alt="Mobile-friendly website">
-      </div>
-      <h2>3. Mobile-Friendly & Easy Navigation</h2>
-      <ul>
-        <li class="checkbox-label"><input type="checkbox"> Ensure mobile optimization: Does your website adjust seamlessly to mobile and tablet screens?</li>
-        <li class="checkbox-label"><input type="checkbox"> Keep navigation simple: Limit your menu to essential pages (e.g., Home, About, Practice Areas, Testimonials, Contact).</li>
-        <li class="checkbox-label"><input type="checkbox"> Use visible CTAs: Ensure calls-to-action like “Request a Consultation” or “Contact Us” are visible on all pages.</li>
-      </ul>
-
-      <!-- Section 4 -->
-      <div class="infrastructure-image">
-        <img src="jaime-nugent-Qtc-iQt8J_M-unsplash.jpg" alt="Logo Design and Branding">
-      </div>
-      <h2>4. Personalize Your Branding</h2>
-      <ul>
-        <li class="checkbox-label"><input type="checkbox"> Create a professional logo: Is your logo clear and professional, reflecting your practice's values?</li>
-        <li class="checkbox-label"><input type="checkbox"> Choose a consistent color palette: Stick to 2-3 colors that align with the legal profession (e.g., navy, dark gray, white).</li>
-      </ul>
-
-      <!-- Section 5 -->
-      <div class="infrastructure-image">
-        <img src="appeals-opener.jpg" alt="Legal Services">
-      </div>
-      <h2>5. Highlight Your Services Clearly</h2>
-      <ul>
-        <li class="checkbox-label"><input type="checkbox"> List your practice areas: Provide clear and concise descriptions of the services you offer.</li>
-        <li class="checkbox-label"><input type="checkbox"> Simplify service descriptions: Keep each description short and client-friendly, avoiding legal jargon.</li>
-        <li class="checkbox-label"><input type="checkbox"> Focus on your top areas: Showcase the specific legal services you excel at, especially if they differentiate your firm.</li>
-      </ul>
-
-      <!-- Section 6 -->
-      <div class="infrastructure-image">
-        <img src="markus-winkler-GTJNxRG4QJw-unsplash.jpg" alt="Client Communication">
-      </div>
-      <h2>6. Make Contacting You Easy</h2>
-      <ul>
-        <li class="checkbox-label"><input type="checkbox"> Include a contact form: Ensure the form is simple and easy to fill out (name, email, message).</li>
-        <li class="checkbox-label"><input type="checkbox"> List contact information clearly: Make sure your contact details are easy to find on every page (header/footer).</li>
-        <li class="checkbox-label"><input type="checkbox"> Integrate appointment scheduling: Use tools like Calendly or a similar scheduling service for clients to book consultations directly.</li>
-      </ul>
-
-      <!-- Section 7 -->
-      <div class="infrastructure-image">
-        <img src="cytonn-photography-n95VMLxqM2I-unsplash.jpg" alt="Trust and Credibility">
-      </div>
-      <h2>7. Build Trust</h2>
-      <ul>
-        <li class="checkbox-label"><input type="checkbox"> Showcase your expertise: Highlight your specific knowledge and skills in web design for law firms.</li>
-        <li class="checkbox-label"><input type="checkbox"> Feature professional affiliations: Display badges or certifications that demonstrate your credibility.</li>
-        <li class="checkbox-label"><input type="checkbox"> Provide clear service guarantees: If applicable, offer a clear guarantee about the quality or delivery of your services.</li>
-      </ul>
-
-      <!-- Section 8 -->
-      <div class="infrastructure-image">
-        <img src="andrew-neel-cckf4TsHAuw-unsplash.jpg" alt="Client Engagement">
-      </div>
-      <h2>8. Content That Speaks to Clients</h2>
-      <ul>
-        <li class="checkbox-label"><input type="checkbox"> Write an engaging About You page: Share your story, your motivation to practice law or start your business, and what drives you to help clients.</li>
-        <li class="checkbox-label"><input type="checkbox"> Add an FAQ section: Answer common questions clients have about your services, costs, and the legal process.</li>
-        <li class="checkbox-label"><input type="checkbox"> Start a blog: Post regular updates or legal advice relevant to your practice areas. Keep it short and informative.</li>
-      </ul>
-
-      <!-- Section 9 -->
-      <div class="infrastructure-image">
-        <img src="merakist-l5if0iQfV4c-unsplash.jpg" alt="Local SEO">
-      </div>
-      <h2>9. Optimize for Local Search (Local SEO)</h2>
-      <ul>
-        <li class="checkbox-label"><input type="checkbox"> Claim and optimize your Google My Business profile.</li>
-        <li class="checkbox-label"><input type="checkbox"> Use local keywords: Incorporate keywords like “best divorce lawyer in [City]” throughout your website.</li>
-        <li class="checkbox-label"><input type="checkbox"> Ensure NAP consistency: Verify your Name, Address, and Phone number are consistent across all online directories (Yelp, Avvo, etc.).</li>
-      </ul>
-
-      <!-- Section 10 -->
-      <h2>10. Basic SEO to Get Found</h2>
-      <ul>
-        <li class="checkbox-label"><input type="checkbox"> Optimize on-page SEO: Include keywords in your page titles, headers, and meta descriptions.</li>
-        <li class="checkbox-label"><input type="checkbox"> Optimize images: Compress images for faster loading times and use alt text with relevant keywords.</li>
-        <li class="checkbox-label"><input type="checkbox"> Set up Google Analytics: Track visitor behavior and website performance.</li>
-      </ul>
-
-      <!-- Section 11 -->
-      <div class="infrastructure-image">
-        <img src="markus-winkler-nxYYBLAUN7Y-unsplash.jpg" alt="Security Measures">
-      </div>
-      <h2>11. Ensure Your Website is Secure</h2>
-      <ul>
-        <li class="checkbox-label"><input type="checkbox"> Install an SSL certificate: Ensure your site is secure with HTTPS to protect client information.</li>
-        <li class="checkbox-label"><input type="checkbox"> Create a privacy policy: If you're collecting personal information, include a basic privacy policy.</li>
-        <li class="checkbox-label"><input type="checkbox"> Backup & update regularly: Set up automatic website backups and ensure plugins/software are up-to-date.</li>
-      </ul>
-
-      <!-- Section 12 -->
-      <h2>12. Keep It Fast & Simple</h2>
-      <ul>
-        <li class="checkbox-label"><input type="checkbox"> Test website speed: Use tools like Google PageSpeed Insights to make sure your site loads quickly.</li>
-        <li class="checkbox-label"><input type="checkbox"> Use a minimalist design: Keep your layout clean and user-friendly, with minimal distractions.</li>
-        <li class="checkbox-label"><input type="checkbox"> Optimize site for user experience: Ensure the site is easy to navigate, with a clear structure and readable fonts.</li>
-      </ul>
-
-      <!-- Section 13 -->
-      <h2>13. Ongoing Maintenance & Updates</h2>
-      <ul>
-        <li class="checkbox-label"><input type="checkbox"> Update website content regularly: Keep your services, blog posts, and testimonials up to date.</li>
-        <li class="checkbox-label"><input type="checkbox"> Monitor website performance: Use Google Analytics to track what’s working and where improvements can be made.</li>
-        <li class="checkbox-label"><input type="checkbox"> Review and refresh SEO: Regularly revisit your SEO strategy to ensure your site remains optimized.</li>
-      </ul>
-
-      <!-- Section 14 -->
-      <h2>Contact Three Clerks, Inc. for a Customized Web Design Experience</h2>
-      <p>Ready to create a website that works for your solo practice or boutique law firm? Three Clerks, Inc. specializes in crafting user-friendly, SEO-optimized, and mobile-responsive websites tailored to the legal industry. Get in touch today for a free consultation and see how we can help elevate your practice online.</p>
-
-      <!-- Print/Download Section -->
-      <div class="cta-block">
-        <p class="cta-text">
-          Want to keep this checklist for reference? You can download it or print it for future use.
-        </p>
-        <p class="cta-link">
-          <a href="#" id="download-pdf">Download as PDF</a> | <a href="javascript:window.print()">Print this Checklist</a>
-        </p>
-      </div>
-
+    <!-- Image Section 1 -->
+    <div class="image-row">
+      <img src="Three-Clerks-Man-Using-Typewriter-and-Laptop.avif" alt="Working on Typewriter and Laptop">
     </div>
+
+    <h2>1. Define Your Website’s Purpose</h2>
+    <ul>
+      <li><input type="checkbox"> Set clear objectives: What do you want your website to achieve? (e.g., lead generation, consultations, case information, etc.)</li>
+      <li><input type="checkbox"> Identify target audience: Who are you focusing on (e.g., individuals needing legal help, small business owners)?</li>
+      <li><input type="checkbox"> Decide on your brand personality: What kind of professional image do you want to project (approachable, authoritative, innovative)?</li>
+    </ul>
+
+    <!-- Image Section 2 -->
+    <div class="image-row">
+      <img src="markus-winkler-Vagh0KcwvwQ-unsplash.jpg" alt="Image 1">
+    </div>
+
+    <h2>2. Choose a Simple & Memorable Domain Name</h2>
+    <ul>
+      <li><input type="checkbox"> Pick a short, memorable domain: E.g., YourNameLaw.com or CityLawyer.com</li>
+      <li><input type="checkbox"> Consider a location-based domain: E.g., “DallasDivorceAttorney.com” if focusing on a specific region.</li>
+      <li><input type="checkbox"> Avoid numbers and hyphens: Choose a clean, easy-to-remember name.</li>
+    </ul>
+
+    <!-- Image Section 3 -->
+    <div class="image-row">
+      <img src="neil-soni-6wdRuK7bVTE-unsplash.jpg" alt="Image 2">
+    </div>
+
+    <h2>3. Mobile-Friendly & Easy Navigation</h2>
+    <ul>
+      <li><input type="checkbox"> Ensure mobile optimization: Does your website adjust seamlessly to mobile and tablet screens?</li>
+      <li><input type="checkbox"> Keep navigation simple: Limit your menu to essential pages (e.g., Home, About, Practice Areas, Testimonials, Contact).</li>
+      <li><input type="checkbox"> Use visible CTAs: Ensure calls-to-action like “Request a Consultation” or “Contact Us” are visible on all pages.</li>
+    </ul>
+
+    <!-- Image Section 4 -->
+    <div class="image-row">
+      <img src="jaime-nugent-Qtc-iQt8J_M-unsplash.jpg" alt="Image 3">
+    </div>
+
+    <h2>4. Personalize Your Branding</h2>
+    <ul>
+      <li><input type="checkbox"> Create a professional logo: Is your logo clear and professional, reflecting your practice's values?</li>
+      <li><input type="checkbox"> Choose a consistent color palette: Stick to 2-3 colors that align with the legal profession (e.g., navy, dark gray, white).</li>
+    </ul>
+
+    <!-- Image Section 5 -->
+    <div class="image-row">
+      <img src="appeals-opener.jpg" alt="Image 4">
+    </div>
+
+    <h2>5. Highlight Your Services Clearly</h2>
+    <ul>
+      <li><input type="checkbox"> List your practice areas: Provide clear and concise descriptions of the services you offer.</li>
+      <li><input type="checkbox"> Simplify service descriptions: Keep each description short and client-friendly, avoiding legal jargon.</li>
+      <li><input type="checkbox"> Focus on your top areas: Showcase the specific legal services you excel at, especially if they differentiate your firm.</li>
+    </ul>
+
+    <!-- Image Section 6 -->
+    <div class="image-row">
+      <img src="markus-winkler-GTJNxRG4QJw-unsplash.jpg" alt="Image 5">
+    </div>
+
+    <h2>6. Make Contacting You Easy</h2>
+    <ul>
+      <li><input type="checkbox"> Include a contact form: Ensure the form is simple and easy to fill out (name, email, message).</li>
+      <li><input type="checkbox"> List contact information clearly: Make sure your contact details are easy to find on every page (header/footer).</li>
+      <li><input type="checkbox"> Integrate appointment scheduling: Use tools like Calendly or a similar scheduling service for clients to book consultations directly.</li>
+    </ul>
+
+    <!-- Image Section 7 -->
+    <div class="image-row">
+      <img src="cytonn-photography-n95VMLxqM2I-unsplash.jpg" alt="Image 6">
+    </div>
+
+    <h2>7. Build Trust</h2>
+    <ul>
+      <li><input type="checkbox"> Showcase your expertise: Highlight your specific knowledge and skills in web design for law firms. Create content that demonstrates your deep understanding of the unique needs of solo practitioners and boutique law firms.</li>
+      <li><input type="checkbox"> Feature professional affiliations: Display badges or certifications that demonstrate your credibility, such as membership in professional organizations (e.g., the Better Business Bureau, any web development or legal-specific industry groups).</li>
+      <li><input type="checkbox"> Provide clear service guarantees: If applicable, offer a clear guarantee about the quality or delivery of your services. Clients appreciate transparency and assurances.</li>
+    </ul>
+
+    <!-- Image Section 8 -->
+    <div class="image-row">
+      <img src="andrew-neel-cckf4TsHAuw-unsplash.jpg" alt="Image 7">
+    </div>
+
+    <h2>8. Content That Speaks to Clients</h2>
+    <ul>
+      <li><input type="checkbox"> Write an engaging About You page: Share your story, your motivation to practice law or start your business, and what drives you to help clients.</li>
+      <li><input type="checkbox"> Add an FAQ section: Answer common questions clients have about your services, costs, and the legal process.</li>
+      <li><input type="checkbox"> Start a blog: Post regular updates or legal advice relevant to your practice areas. Keep it short and informative.</li>
+    </ul>
+
+    <!-- Image Section 9 -->
+    <div class="image-row">
+      <img src="merakist-l5if0iQfV4c-unsplash.jpg" alt="Image 8">
+    </div>
+
+    <h2>9. Optimize for Local Search (Local SEO)</h2>
+    <ul>
+      <li><input type="checkbox"> Claim and optimize your Google My Business profile: Ensure your law firm shows up in local search results.</li>
+      <li><input type="checkbox"> Use local keywords: Incorporate keywords like “best divorce lawyer in [City]” throughout your website.</li>
+      <li><input type="checkbox"> Ensure NAP consistency: Verify your Name, Address, and Phone number are consistent across all online directories (Yelp, Avvo, etc.).</li>
+    </ul>
+
+    <!-- No image for Section 10 -->
+
+    <h2>10. Basic SEO to Get Found</h2>
+    <ul>
+      <li><input type="checkbox"> Optimize on-page SEO: Include keywords in your page titles, headers, and meta descriptions.</li>
+      <li><input type="checkbox"> Optimize images: Compress images for faster loading times and use alt text with relevant keywords.</li>
+      <li><input type="checkbox"> Set up Google Analytics: Track visitor behavior and website performance.</li>
+    </ul>
+
+    <!-- Image Section 10 -->
+    <div class="image-row">
+      <img src="markus-winkler-nxYYBLAUN7Y-unsplash.jpg" alt="Image 9">
+    </div>
+
+    <h2>11. Ensure Your Website is Secure</h2>
+    <ul>
+      <li><input type="checkbox"> Install an SSL certificate: Ensure your site is secure with HTTPS to protect client information.</li>
+      <li><input type="checkbox"> Create a privacy policy: If you're collecting personal information, include a basic privacy policy.</li>
+      <li><input type="checkbox"> Backup & update regularly: Set up automatic website backups and ensure plugins/software are up-to-date.</li>
+    </ul>
+
+    <!-- No images for Sections 12, 13, 14 -->
+
+    <h2>12. Keep It Fast & Simple</h2>
+    <ul>
+      <li><input type="checkbox"> Test website speed: Use tools like Google PageSpeed Insights to make sure your site loads quickly.</li>
+      <li><input type="checkbox"> Use a minimalist design: Keep your layout clean and user-friendly, with minimal distractions.</li>
+      <li><input type="checkbox"> Optimize site for user experience: Ensure the site is easy to navigate, with a clear structure and readable fonts.</li>
+    </ul>
+
+    <h2>13. Ongoing Maintenance & Updates</h2>
+    <ul>
+      <li><input type="checkbox"> Update website content regularly: Keep your services, blog posts, and testimonials up to date.</li>
+      <li><input type="checkbox"> Monitor website performance: Use Google Analytics to track what’s working and where improvements can be made.</li>
+      <li><input type="checkbox"> Review and refresh SEO: Regularly revisit your SEO strategy to ensure your site remains optimized.</li>
+    </ul>
+
+    <h2>Contact Three Clerks</h2>
+    <p>If you need help with designing or updating your law firm’s website, reach out to us for a customized web design experience.</p>
+
+    <!-- Download PDF Button -->
+    <button id="download-pdf" onclick="downloadPDF()">Download as PDF</button>
+
   </main>
 
-  <!-- Footer -->
-  <footer role="contentinfo">
-    <p>
-      © 2026 Three Clerks, Inc. ·
-      <a href="/#services">Services</a> ·
-      <a href="privacy-policy.html">Privacy Policy</a>
-    </p>
-  </footer>
+  <script>
+    function downloadPDF() {
+      const { jsPDF } = window.jspdf;
+      const doc = new jsPDF();
+      
+      doc.html(document.body, {
+        callback: function (doc) {
+          doc.save('web-design-checklist.pdf');
+        },
+        x: 10,
+        y: 10
+      });
+    }
+  </script>
 
 </body>
 </html>
