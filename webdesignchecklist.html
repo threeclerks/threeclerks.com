@@ -83,28 +83,21 @@
       display: flex;
       justify-content: space-between;
       margin-bottom: 20px;
+      flex-wrap: wrap;
     }
 
     .image-row img {
       max-width: 100%;
-      height: auto; /* Keeps original aspect ratio */
-      max-height: 300px; /* Prevents images from getting too tall */
+      max-height: 250px; /* Constrain height */
+      height: auto; /* Maintain aspect ratio */
       display: block;
       margin: 0 auto;
+      margin-bottom: 15px;
     }
 
-    .image-row img:nth-child(1) {
+    .image-row img:nth-child(1), .image-row img:nth-child(2), .image-row img:nth-child(3) {
       flex: 1;
-      margin-right: 10px;
-    }
-
-    .image-row img:nth-child(2) {
-      flex: 1;
-      margin-right: 10px;
-    }
-
-    .image-row img:nth-child(3) {
-      flex: 1;
+      max-width: 250px;
     }
   </style>
 </head>
