@@ -26,7 +26,6 @@
       color: #f1f1f1;
     }
 
-    /* Hero Section */
     header {
       position: relative;
       height: 300px;
@@ -77,7 +76,6 @@
       background: #004d99;
     }
 
-    /* Main Content */
     .container {
       max-width: 900px;
       margin: 30px auto;
@@ -92,41 +90,6 @@
       color: #0066ff;
     }
 
-    .services {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 20px;
-    }
-    .services div {
-      padding: 20px;
-      background: #2a2a2a;
-      border-radius: 8px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    }
-    .services h3 {
-      color: #0066ff;
-      font-size: 1.6em;
-    }
-    .services p {
-      color: #bbb;
-    }
-
-    /* Footer */
-    footer {
-      text-align: center;
-      margin-top: 50px;
-      font-size: 0.9em;
-      color: #888;
-    }
-    footer a {
-      color: #0066ff;
-      text-decoration: none;
-    }
-    footer a:hover {
-      text-decoration: underline;
-    }
-
-    /* Contract Options */
     .contract-options {
       margin: 30px 0;
       color: #bbb;
@@ -145,7 +108,6 @@
       padding-left: 20px;
     }
 
-    /* Contract Details Form */
     .contract-details {
       margin-top: 30px;
       background: #2a2a2a;
@@ -153,7 +115,6 @@
       border-radius: 8px;
     }
 
-    /* Subscription Form */
     .contact-form {
       display: flex;
       justify-content: center;
@@ -181,12 +142,25 @@
       background: #004d99;
     }
 
+    footer {
+      text-align: center;
+      margin-top: 50px;
+      font-size: 0.9em;
+      color: #888;
+    }
+    footer a {
+      color: #0066ff;
+      text-decoration: none;
+    }
+    footer a:hover {
+      text-decoration: underline;
+    }
+
     @media (max-width: 768px) {
       .services {
         grid-template-columns: 1fr;
       }
     }
-
   </style>
 </head>
 <body>
@@ -209,7 +183,6 @@
   <!-- Main Content -->
   <div class="container">
 
-    <!-- Smart Contracts Section -->
     <h2>What is a Smart Contract?</h2>
     <p>A <strong>smart contract</strong> is a self-executing agreement written in code, deployed on a blockchain. The contract automatically enforces the terms when conditions are met, without the need for intermediaries. It’s like a digital agreement that runs automatically on Ethereum or Polygon blockchain networks.</p>
 
@@ -235,7 +208,6 @@
           <li><strong>Standard Contract</strong> ($150): For moderate complexity, such as:
             <ul>
               <li>Custom conditions such as milestones for payments (e.g., pay 50% upfront, 50% upon completion).</li>
-              <li>Contracts that require multiple actions (e.g., triggering a payment after certain conditions are met, like asset release or task completion).</li>
               <li>Smart contracts with a few conditions and simple workflows.</li>
             </ul>
           </li>
@@ -250,7 +222,6 @@
       </div>
     </div>
 
-    <!-- Dropdown for selecting contract type -->
     <h3>Select Contract Type:</h3>
     <form id="contract-form">
       <select id="contract-type" name="contract-type">
