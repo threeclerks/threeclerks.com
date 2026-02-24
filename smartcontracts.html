@@ -157,6 +157,12 @@
       text-align: center;
     }
 
+    .warning-message {
+      color: red;
+      font-weight: bold;
+      display: none;
+    }
+
     footer {
       text-align: center;
       margin-top: 50px;
@@ -250,6 +256,10 @@
         <textarea id="contract-description" rows="6" placeholder="Provide details of your contract terms. The more detail you provide, the better we can determine the complexity." style="width:100%;"></textarea>
       </div>
 
+      <div id="complexity-warning" class="warning-message">
+        <p>Your contract description seems too complex for this plan. Please review your terms or select a higher plan.</p>
+      </div>
+
       <button type="submit" id="pay-now">Submit Contract and Pay</button>
     </form>
 
@@ -275,26 +285,40 @@
     </p>
   </footer>
 
-  <!-- JavaScript for Progress Bar -->
+  <!-- JavaScript for Progress Bar and Validation -->
   <script>
     const contractForm = document.getElementById('contract-form');
     const progressBar = document.getElementById('progress-bar');
+    const contractDescription = document.getElementById('contract-description');
+    const submitButton = document.getElementById('pay-now');
+    const complexityWarning = document.getElementById('complexity-warning');
+
+    // Regular expressions to detect keywords
+    const complexKeywords = /(escrow|approval|integration|multi-party|oracle|API|external data|complex)/i;
 
     contractForm.addEventListener('submit', function(e) {
       e.preventDefault();
 
-      let currentStep = 0;
+      const selectedContractType = document.getElementById('contract-type').value;
+      const descriptionText = contractDescription.value;
 
-      // Step 1: Choose Contract Type
-      progressBar.style.width = '33%';
-      setTimeout(() => {
-        // Step 2: Provide Contract Details
-        progressBar.style.width = '66%';
+      // Show warning if the complexity of description doesn't match selected contract type
+      if (selectedContractType === 'basic' && complexKeywords.test(descriptionText)) {
+        complexityWarning.style.display = 'block'; // Show warning message
+        return; // Prevent form submission
+      } else {
+        complexityWarning.style.display = 'none'; // Hide warning message
+
+        // Proceed with progress bar updates
+        let currentStep = 0;
+        progressBar.style.width = '33%';
         setTimeout(() => {
-          // Step 3: Review and Pay
-          progressBar.style.width = '100%';
+          progressBar.style.width = '66%';
+          setTimeout(() => {
+            progressBar.style.width = '100%';
+          }, 1000);
         }, 1000);
-      }, 1000);
+      }
     });
   </script>
 
