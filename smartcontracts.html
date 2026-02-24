@@ -84,10 +84,25 @@
       border-radius: 12px;
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
     }
-    h2 {
-      font-size: 2.5em;
+
+    .progress-container {
       margin-bottom: 20px;
-      color: #0066ff;
+      background: #444;
+      border-radius: 8px;
+      height: 10px;
+    }
+    .progress-bar {
+      width: 0%;
+      background: #0066ff;
+      height: 100%;
+      border-radius: 8px;
+    }
+
+    .steps-description {
+      font-size: 1.1em;
+      color: #bbb;
+      margin-top: 10px;
+      text-align: center;
     }
 
     .contract-options {
@@ -183,6 +198,16 @@
   <!-- Main Content -->
   <div class="container">
 
+    <!-- Progress Bar Section -->
+    <div class="progress-container">
+      <div class="progress-bar" id="progress-bar"></div>
+    </div>
+    <div class="steps-description">
+      <p>Step 1: Choose Your Contract Type</p>
+      <p>Step 2: Provide Contract Details</p>
+      <p>Step 3: Review and Pay</p>
+    </div>
+
     <h2>What is a Smart Contract?</h2>
     <p>A <strong>smart contract</strong> is a self-executing agreement written in code, deployed on a blockchain. The contract automatically enforces the terms when conditions are met, without the need for intermediaries. It’s like a digital agreement that runs automatically on Ethereum or Polygon blockchain networks.</p>
 
@@ -249,47 +274,26 @@
     </p>
   </footer>
 
-  <!-- JavaScript for Stripe Integration -->
-  <script src="https://js.stripe.com/v3/"></script>
+  <!-- JavaScript for Progress Bar -->
   <script>
-    const stripe = Stripe('YOUR_STRIPE_PUBLIC_KEY'); // Replace with your Stripe public key
+    const contractForm = document.getElementById('contract-form');
+    const progressBar = document.getElementById('progress-bar');
 
-    document.getElementById('contract-form').addEventListener('submit', async (e) => {
+    contractForm.addEventListener('submit', function(e) {
       e.preventDefault();
 
-      const contractType = document.getElementById('contract-type').value;
-      const description = document.getElementById('contract-description').value;
-      let amount;
+      let currentStep = 0;
 
-      // Validate if the description matches the complexity
-      if (contractType === 'basic' && description.includes('complex')) {
-        alert("Your description suggests a complex contract. Please adjust your contract type.");
-        return;
-      }
-
-      // Set amount based on the selected contract type
-      if (contractType === 'basic') {
-        amount = 5000; // $50
-      } else if (contractType === 'standard') {
-        amount = 15000; // $150
-      } else if (contractType === 'complex') {
-        amount = 30000; // $300
-      }
-
-      // Make request to backend to create Stripe checkout session
-      const response = await fetch('/create-checkout-session', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ amount: amount, contractType: contractType, description: description })
-      });
-
-      const session = await response.json();
-      const result = await stripe.redirectToCheckout({ sessionId: session.id });
-      if (result.error) {
-        alert(result.error.message);
-      }
+      // Step 1: Choose Contract Type
+      progressBar.style.width = '33%';
+      setTimeout(() => {
+        // Step 2: Provide Contract Details
+        progressBar.style.width = '66%';
+        setTimeout(() => {
+          // Step 3: Review and Pay
+          progressBar.style.width = '100%';
+        }, 1000);
+      }, 1000);
     });
   </script>
 
