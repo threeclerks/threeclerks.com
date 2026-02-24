@@ -145,6 +145,14 @@
       padding-left: 20px;
     }
 
+    /* Contract Details Form */
+    .contract-details {
+      margin-top: 30px;
+      background: #2a2a2a;
+      padding: 20px;
+      border-radius: 8px;
+    }
+
     /* Subscription Form */
     .contact-form {
       display: flex;
@@ -242,10 +250,22 @@
       </div>
     </div>
 
-    <!-- Payment Button -->
-    <div class="contract-options">
-      <button id="pay-now" style="background-color: #0066ff; color: white; border: none;">Pay Now & Create Your Smart Contract</button>
-    </div>
+    <!-- Dropdown for selecting contract type -->
+    <h3>Select Contract Type:</h3>
+    <form id="contract-form">
+      <select id="contract-type" name="contract-type">
+        <option value="basic">Basic Contract - $50</option>
+        <option value="standard">Standard Contract - $150</option>
+        <option value="complex">Complex Contract - $300</option>
+      </select>
+
+      <div class="contract-details">
+        <h4>Describe your contract requirements:</h4>
+        <textarea id="contract-description" rows="6" placeholder="Provide details of your contract terms. The more detail you provide, the better we can determine the complexity." style="width:100%;"></textarea>
+      </div>
+
+      <button type="submit" id="pay-now">Pay Now & Submit Contract Details</button>
+    </form>
   </div>
 
   <!-- Footer -->
@@ -263,9 +283,18 @@
   <script>
     const stripe = Stripe('YOUR_STRIPE_PUBLIC_KEY'); // Replace with your Stripe public key
 
-    document.getElementById('pay-now').addEventListener('click', async () => {
-      const contractType = document.querySelector("input[name='contract-type']:checked").value;
+    document.getElementById('contract-form').addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      const contractType = document.getElementById('contract-type').value;
+      const description = document.getElementById('contract-description').value;
       let amount;
+
+      // Validate if the description matches the complexity
+      if (contractType === 'basic' && description.includes('complex')) {
+        alert("Your description suggests a complex contract. Please adjust your contract type.");
+        return;
+      }
 
       // Set amount based on the selected contract type
       if (contractType === 'basic') {
@@ -276,13 +305,13 @@
         amount = 30000; // $300
       }
 
-      // Make request to backend to create Stripe checkout session (Replace with your own backend endpoint)
+      // Make request to backend to create Stripe checkout session
       const response = await fetch('/create-checkout-session', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ amount: amount, contractType: contractType })
+        body: JSON.stringify({ amount: amount, contractType: contractType, description: description })
       });
 
       const session = await response.json();
